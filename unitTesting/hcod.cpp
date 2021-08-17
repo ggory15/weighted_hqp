@@ -26,7 +26,7 @@ BOOST_AUTO_TEST_SUITE ( BOOST_TEST_MODULE )
 BOOST_AUTO_TEST_CASE ( test_random )
 {   
     int n_size = 20;
-    RandStackWithWeight RandStack(n_size, 2, Vector2i(4, 4), Vector2i(4, 4));
+    RandStackWithWeight RandStack(n_size, 2, Vector2i(8, 8), Vector2i(8, 8));
     Initset Init_active(RandStack.getbtype());
     auto t1 = high_resolution_clock::now();
     HCod Hcod_t(RandStack.getA(), RandStack.getb(), RandStack.getbtype(),Init_active.getactiveset(), Init_active.getbounds());
@@ -75,12 +75,13 @@ BOOST_AUTO_TEST_CASE ( test_random )
     Ehqp_primal ehqp_primal(Hcod_t.geth(),Hcod_t.getY());
     auto t2 = high_resolution_clock::now();
     auto ms_int = duration_cast<milliseconds>(t2 - t1);
+    duration<double, std::milli> ms_double = t2 - t1;
     std::cout << ms_double.count() << "ms" << endl;
     cout << " " << endl;
 
     cout << "HCOD Solution: " << ehqp_primal.getx().transpose() << endl;
    
-    duration<double, std::milli> ms_double = t2 - t1;
+    
     
     MatrixXd J1 = RandStack.getA()[0];
     MatrixXd J2 = RandStack.getA()[1];
@@ -97,3 +98,4 @@ BOOST_AUTO_TEST_CASE ( test_random )
 
 	
 BOOST_AUTO_TEST_SUITE_END ()
+
