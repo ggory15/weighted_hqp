@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 # Utility rule file for reinstall.
 
@@ -57,7 +57,7 @@ CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
 include CMakeFiles/reinstall.dir/progress.make
 
 CMakeFiles/reinstall:
-	/usr/bin/cmake -P /home/ggory15/git/HQP_Hcod/build/cmake/Release/cmake_reinstall.cmake
+	/usr/bin/cmake -P /home/ggory15/git/weighted_hqp/build/cmake/Release/cmake_reinstall.cmake
 
 reinstall: CMakeFiles/reinstall
 reinstall: CMakeFiles/reinstall.dir/build.make
@@ -74,6 +74,6 @@ CMakeFiles/reinstall.dir/clean:
 .PHONY : CMakeFiles/reinstall.dir/clean
 
 CMakeFiles/reinstall.dir/depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build/CMakeFiles/reinstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build/CMakeFiles/reinstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/reinstall.dir/depend
 

@@ -51,10 +51,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -140,14 +140,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ggory15/git/HQP_Hcod/build/CMakeFiles /home/ggory15/git/HQP_Hcod/build/unitTesting/CMakeFiles/progress.marks
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ggory15/git/HQP_Hcod/build/CMakeFiles 0
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ggory15/git/weighted_hqp/build/CMakeFiles /home/ggory15/git/weighted_hqp/build/unitTesting/CMakeFiles/progress.marks
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ggory15/git/weighted_hqp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/clean
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/clean
 .PHONY : clean
 
 # The main clean target
@@ -157,22 +157,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/preinstall
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/preinstall
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 unitTesting/CMakeFiles/cod.dir/rule:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/cod.dir/rule
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/cod.dir/rule
 .PHONY : unitTesting/CMakeFiles/cod.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ cod: unitTesting/CMakeFiles/cod.dir/rule
 
 # fast build rule for target.
 cod/fast:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/build
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/build
 .PHONY : cod/fast
 
 # Convenience name for target.
 unitTesting/CMakeFiles/hcod.dir/rule:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/hcod.dir/rule
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/hcod.dir/rule
 .PHONY : unitTesting/CMakeFiles/hcod.dir/rule
 
 # Convenience name for target.
@@ -197,12 +197,12 @@ hcod: unitTesting/CMakeFiles/hcod.dir/rule
 
 # fast build rule for target.
 hcod/fast:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/build
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/build
 .PHONY : hcod/fast
 
 # Convenience name for target.
 unitTesting/CMakeFiles/InitSet.dir/rule:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/InitSet.dir/rule
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/InitSet.dir/rule
 .PHONY : unitTesting/CMakeFiles/InitSet.dir/rule
 
 # Convenience name for target.
@@ -212,12 +212,12 @@ InitSet: unitTesting/CMakeFiles/InitSet.dir/rule
 
 # fast build rule for target.
 InitSet/fast:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/build
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/build
 .PHONY : InitSet/fast
 
 # Convenience name for target.
 unitTesting/CMakeFiles/Random.dir/rule:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/Random.dir/rule
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f CMakeFiles/Makefile2 unitTesting/CMakeFiles/Random.dir/rule
 .PHONY : unitTesting/CMakeFiles/Random.dir/rule
 
 # Convenience name for target.
@@ -227,7 +227,7 @@ Random: unitTesting/CMakeFiles/Random.dir/rule
 
 # fast build rule for target.
 Random/fast:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/build
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/build
 .PHONY : Random/fast
 
 InitSet.o: InitSet.cpp.o
@@ -236,7 +236,7 @@ InitSet.o: InitSet.cpp.o
 
 # target to build an object file
 InitSet.cpp.o:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.o
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.o
 .PHONY : InitSet.cpp.o
 
 InitSet.i: InitSet.cpp.i
@@ -245,7 +245,7 @@ InitSet.i: InitSet.cpp.i
 
 # target to preprocess a source file
 InitSet.cpp.i:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.i
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.i
 .PHONY : InitSet.cpp.i
 
 InitSet.s: InitSet.cpp.s
@@ -254,7 +254,7 @@ InitSet.s: InitSet.cpp.s
 
 # target to generate assembly for a file
 InitSet.cpp.s:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.s
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/InitSet.dir/build.make unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.s
 .PHONY : InitSet.cpp.s
 
 Random.o: Random.cpp.o
@@ -263,7 +263,7 @@ Random.o: Random.cpp.o
 
 # target to build an object file
 Random.cpp.o:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/Random.cpp.o
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/Random.cpp.o
 .PHONY : Random.cpp.o
 
 Random.i: Random.cpp.i
@@ -272,7 +272,7 @@ Random.i: Random.cpp.i
 
 # target to preprocess a source file
 Random.cpp.i:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/Random.cpp.i
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/Random.cpp.i
 .PHONY : Random.cpp.i
 
 Random.s: Random.cpp.s
@@ -281,7 +281,7 @@ Random.s: Random.cpp.s
 
 # target to generate assembly for a file
 Random.cpp.s:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/Random.cpp.s
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/Random.dir/build.make unitTesting/CMakeFiles/Random.dir/Random.cpp.s
 .PHONY : Random.cpp.s
 
 cod.o: cod.cpp.o
@@ -290,7 +290,7 @@ cod.o: cod.cpp.o
 
 # target to build an object file
 cod.cpp.o:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/cod.cpp.o
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/cod.cpp.o
 .PHONY : cod.cpp.o
 
 cod.i: cod.cpp.i
@@ -299,7 +299,7 @@ cod.i: cod.cpp.i
 
 # target to preprocess a source file
 cod.cpp.i:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/cod.cpp.i
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/cod.cpp.i
 .PHONY : cod.cpp.i
 
 cod.s: cod.cpp.s
@@ -308,7 +308,7 @@ cod.s: cod.cpp.s
 
 # target to generate assembly for a file
 cod.cpp.s:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/cod.cpp.s
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/cod.dir/build.make unitTesting/CMakeFiles/cod.dir/cod.cpp.s
 .PHONY : cod.cpp.s
 
 hcod.o: hcod.cpp.o
@@ -317,7 +317,7 @@ hcod.o: hcod.cpp.o
 
 # target to build an object file
 hcod.cpp.o:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/hcod.cpp.o
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/hcod.cpp.o
 .PHONY : hcod.cpp.o
 
 hcod.i: hcod.cpp.i
@@ -326,7 +326,7 @@ hcod.i: hcod.cpp.i
 
 # target to preprocess a source file
 hcod.cpp.i:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/hcod.cpp.i
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/hcod.cpp.i
 .PHONY : hcod.cpp.i
 
 hcod.s: hcod.cpp.s
@@ -335,7 +335,7 @@ hcod.s: hcod.cpp.s
 
 # target to generate assembly for a file
 hcod.cpp.s:
-	cd /home/ggory15/git/HQP_Hcod/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/hcod.cpp.s
+	cd /home/ggory15/git/weighted_hqp/build && $(MAKE) -f unitTesting/CMakeFiles/hcod.dir/build.make unitTesting/CMakeFiles/hcod.dir/hcod.cpp.s
 .PHONY : hcod.cpp.s
 
 # Help Target
@@ -378,6 +378,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

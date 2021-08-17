@@ -22,7 +22,7 @@ vector
 iostream
 -
 
-/home/ggory15/git/HQP_Hcod/unitTesting/InitSet.cpp
+/home/ggory15/git/weighted_hqp/unitTesting/InitSet.cpp
 iostream
 -
 cstdio
@@ -30,9 +30,9 @@ cstdio
 Eigen/Core
 -
 HQP_Hcod/Random.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/Random.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/Random.hpp
 HQP_Hcod/InitSet.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/InitSet.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/InitSet.hpp
 boost/test/unit_test.hpp
 -
 boost/utility/binary.hpp

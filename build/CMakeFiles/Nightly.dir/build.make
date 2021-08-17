@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 # Utility rule file for Nightly.
 
@@ -74,6 +74,6 @@ CMakeFiles/Nightly.dir/clean:
 .PHONY : CMakeFiles/Nightly.dir/clean
 
 CMakeFiles/Nightly.dir/depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build/CMakeFiles/Nightly.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build/CMakeFiles/Nightly.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Nightly.dir/depend
 

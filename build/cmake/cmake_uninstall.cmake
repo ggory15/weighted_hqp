@@ -15,9 +15,9 @@
 #
 # This files comes from the CMake FAQ: http://www.cmake.org/Wiki/CMake_FAQ
 cmake_policy(SET CMP0007 NEW)
-IF(NOT EXISTS "/home/ggory15/git/HQP_Hcod/build/install_manifest.txt")
-  MESSAGE(FATAL_ERROR "Cannot find install manifest:\"/home/ggory15/git/HQP_Hcod/build/install_manifest.txt\"")
-ENDIF(NOT EXISTS "/home/ggory15/git/HQP_Hcod/build/install_manifest.txt")
+IF(NOT EXISTS "/home/ggory15/git/weighted_hqp/build/install_manifest.txt")
+  MESSAGE(FATAL_ERROR "Cannot find install manifest:\"/home/ggory15/git/weighted_hqp/build/install_manifest.txt\"")
+ENDIF(NOT EXISTS "/home/ggory15/git/weighted_hqp/build/install_manifest.txt")
 
 MESSAGE(STATUS "catkin path: /usr/local/.catkin")
 IF(EXISTS "/usr/local/.catkin")
@@ -31,7 +31,7 @@ IF(EXISTS "/usr/local/.catkin")
 ENDIF(EXISTS "/usr/local/.catkin")
 
 
-FILE(READ "/home/ggory15/git/HQP_Hcod/build/install_manifest.txt" files)
+FILE(READ "/home/ggory15/git/weighted_hqp/build/install_manifest.txt" files)
 STRING(REGEX REPLACE "\n" ";" files "${files}")
 LIST(REMOVE_ITEM files "")
 LIST(REVERSE files)
@@ -77,7 +77,7 @@ FOREACH(file ${files})
   ENDIF(EXISTS "$ENV{DESTDIR}${file}")
 ENDFOREACH(file)
 EXECUTE_PROCESS(
-  COMMAND "/usr/bin/cmake" -E remove "/home/ggory15/git/HQP_Hcod/build/install_manifest.txt"
+  COMMAND "/usr/bin/cmake" -E remove "/home/ggory15/git/weighted_hqp/build/install_manifest.txt"
   RESULT_VARIABLE rm_resval
   OUTPUT_VARIABLE rm_out
   ERROR_QUIET

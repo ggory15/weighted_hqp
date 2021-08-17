@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 # Utility rule file for dist_targz.
 
@@ -57,8 +57,8 @@ CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
 include CMakeFiles/dist_targz.dir/progress.make
 
 CMakeFiles/dist_targz:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tar.gz tarball and its signature..."
-	/usr/bin/tar -czf HQP_Hcod-0.0.0.tar.gz HQP_Hcod-0.0.0/ && /usr/bin/gpg --detach-sign --armor -o /home/ggory15/git/HQP_Hcod/build/HQP_Hcod-0.0.0.tar.gz.sig /home/ggory15/git/HQP_Hcod/build/HQP_Hcod-0.0.0.tar.gz
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating tar.gz tarball and its signature..."
+	/usr/bin/tar -czf HQP_Hcod-0.0.0.tar.gz HQP_Hcod-0.0.0/ && /usr/bin/gpg --detach-sign --armor -o /home/ggory15/git/weighted_hqp/build/HQP_Hcod-0.0.0.tar.gz.sig /home/ggory15/git/weighted_hqp/build/HQP_Hcod-0.0.0.tar.gz
 
 dist_targz: CMakeFiles/dist_targz
 dist_targz: CMakeFiles/dist_targz.dir/build.make
@@ -75,6 +75,6 @@ CMakeFiles/dist_targz.dir/clean:
 .PHONY : CMakeFiles/dist_targz.dir/clean
 
 CMakeFiles/dist_targz.dir/depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build/CMakeFiles/dist_targz.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build/CMakeFiles/dist_targz.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dist_targz.dir/depend
 

@@ -10,29 +10,29 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/ggory15/git/HQP_Hcod/build/CMakeFiles/3.16.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/ggory15/git/weighted_hqp/build/CMakeFiles/3.16.3/CompilerIdCXX/a.out"
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7f456/fast && /usr/bin/make -f CMakeFiles/cmTC_7f456.dir/build.make CMakeFiles/cmTC_7f456.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7f456.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_7f456.dir/testCXXCompiler.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_7f456
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f456.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_7f456.dir/testCXXCompiler.cxx.o  -o cmTC_7f456 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Run Build Command(s):/usr/bin/make cmTC_b5b5a/fast && /usr/bin/make -f CMakeFiles/cmTC_b5b5a.dir/build.make CMakeFiles/cmTC_b5b5a.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b5b5a.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_b5b5a.dir/testCXXCompiler.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_b5b5a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5b5a.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b5b5a.dir/testCXXCompiler.cxx.o  -o cmTC_b5b5a 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_34838/fast && /usr/bin/make -f CMakeFiles/cmTC_34838.dir/build.make CMakeFiles/cmTC_34838.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++    -v -o CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/make cmTC_ff30e/fast && /usr/bin/make -f CMakeFiles/cmTC_ff30e.dir/build.make CMakeFiles/cmTC_ff30e.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++    -v -o CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 OFFLOAD_TARGET_NAMES=nvptx-none:hsa
@@ -41,8 +41,8 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccOqvFXK.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccdKOAnq.s
 GNU C++14 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
 	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
 
@@ -66,15 +66,15 @@ GNU C++14 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 466f818abe2f30ba03783f22bd12d815
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccOqvFXK.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccdKOAnq.s
 GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_34838
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34838.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_34838 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_ff30e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff30e.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ff30e 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -86,10 +86,10 @@ Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_34838' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyMSOYb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_34838 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_34838' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ff30e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBbRDTO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ff30e /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ff30e' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 
@@ -116,12 +116,12 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_34838/fast && /usr/bin/make -f CMakeFiles/cmTC_34838.dir/build.make CMakeFiles/cmTC_34838.dir/build]
-  ignore line: [make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_ff30e/fast && /usr/bin/make -f CMakeFiles/cmTC_ff30e.dir/build.make CMakeFiles/cmTC_ff30e.dir/build]
+  ignore line: [make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++    -v -o CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
@@ -130,8 +130,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccOqvFXK.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccdKOAnq.s]
   ignore line: [GNU C++14 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
   ignore line: []
@@ -155,15 +155,15 @@ Parsed CXX implicit link information from above output:
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 466f818abe2f30ba03783f22bd12d815]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccOqvFXK.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccdKOAnq.s]
   ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_34838]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34838.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_34838 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_ff30e]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff30e.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ff30e ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
@@ -175,13 +175,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_34838' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyMSOYb.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_34838 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ff30e' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBbRDTO.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ff30e /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccyMSOYb.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccBbRDTO.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -200,7 +200,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_34838] ==> ignore
+    arg [cmTC_ff30e] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
@@ -212,7 +212,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
-    arg [CMakeFiles/cmTC_34838.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_ff30e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -236,145 +236,145 @@ Parsed CXX implicit link information from above output:
 
 
 Performing C++ SOURCE FILE Test R-pedantic succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6d4d0/fast && /usr/bin/make -f CMakeFiles/cmTC_6d4d0.dir/build.make CMakeFiles/cmTC_6d4d0.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6d4d0.dir/src.cxx.o
-/usr/bin/c++    -DR-pedantic   -pedantic -o CMakeFiles/cmTC_6d4d0.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_1ddf4/fast && /usr/bin/make -f CMakeFiles/cmTC_1ddf4.dir/build.make CMakeFiles/cmTC_1ddf4.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1ddf4.dir/src.cxx.o
+/usr/bin/c++    -DR-pedantic   -pedantic -o CMakeFiles/cmTC_1ddf4.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_6d4d0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d4d0.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-pedantic    -rdynamic CMakeFiles/cmTC_6d4d0.dir/src.cxx.o  -o cmTC_6d4d0 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_1ddf4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ddf4.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-pedantic    -rdynamic CMakeFiles/cmTC_1ddf4.dir/src.cxx.o  -o cmTC_1ddf4 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wno-long-long succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3469c/fast && /usr/bin/make -f CMakeFiles/cmTC_3469c.dir/build.make CMakeFiles/cmTC_3469c.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3469c.dir/src.cxx.o
-/usr/bin/c++    -DR-Wno-long-long   -Wno-long-long -o CMakeFiles/cmTC_3469c.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_a17e7/fast && /usr/bin/make -f CMakeFiles/cmTC_a17e7.dir/build.make CMakeFiles/cmTC_a17e7.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a17e7.dir/src.cxx.o
+/usr/bin/c++    -DR-Wno-long-long   -Wno-long-long -o CMakeFiles/cmTC_a17e7.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_3469c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3469c.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wno-long-long    -rdynamic CMakeFiles/cmTC_3469c.dir/src.cxx.o  -o cmTC_3469c 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_a17e7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a17e7.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wno-long-long    -rdynamic CMakeFiles/cmTC_a17e7.dir/src.cxx.o  -o cmTC_a17e7 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wall succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_6e7b8/fast && /usr/bin/make -f CMakeFiles/cmTC_6e7b8.dir/build.make CMakeFiles/cmTC_6e7b8.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6e7b8.dir/src.cxx.o
-/usr/bin/c++    -DR-Wall   -Wall -o CMakeFiles/cmTC_6e7b8.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_f11ea/fast && /usr/bin/make -f CMakeFiles/cmTC_f11ea.dir/build.make CMakeFiles/cmTC_f11ea.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f11ea.dir/src.cxx.o
+/usr/bin/c++    -DR-Wall   -Wall -o CMakeFiles/cmTC_f11ea.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_6e7b8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e7b8.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wall    -rdynamic CMakeFiles/cmTC_6e7b8.dir/src.cxx.o  -o cmTC_6e7b8 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_f11ea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f11ea.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wall    -rdynamic CMakeFiles/cmTC_f11ea.dir/src.cxx.o  -o cmTC_f11ea 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wextra succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7b406/fast && /usr/bin/make -f CMakeFiles/cmTC_7b406.dir/build.make CMakeFiles/cmTC_7b406.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7b406.dir/src.cxx.o
-/usr/bin/c++    -DR-Wextra   -Wextra -o CMakeFiles/cmTC_7b406.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_a36ae/fast && /usr/bin/make -f CMakeFiles/cmTC_a36ae.dir/build.make CMakeFiles/cmTC_a36ae.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a36ae.dir/src.cxx.o
+/usr/bin/c++    -DR-Wextra   -Wextra -o CMakeFiles/cmTC_a36ae.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_7b406
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b406.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wextra    -rdynamic CMakeFiles/cmTC_7b406.dir/src.cxx.o  -o cmTC_7b406 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_a36ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a36ae.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wextra    -rdynamic CMakeFiles/cmTC_a36ae.dir/src.cxx.o  -o cmTC_a36ae 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wcast-align succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d9a83/fast && /usr/bin/make -f CMakeFiles/cmTC_d9a83.dir/build.make CMakeFiles/cmTC_d9a83.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d9a83.dir/src.cxx.o
-/usr/bin/c++    -DR-Wcast-align   -Wcast-align -o CMakeFiles/cmTC_d9a83.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_0b2a3/fast && /usr/bin/make -f CMakeFiles/cmTC_0b2a3.dir/build.make CMakeFiles/cmTC_0b2a3.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0b2a3.dir/src.cxx.o
+/usr/bin/c++    -DR-Wcast-align   -Wcast-align -o CMakeFiles/cmTC_0b2a3.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_d9a83
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9a83.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wcast-align    -rdynamic CMakeFiles/cmTC_d9a83.dir/src.cxx.o  -o cmTC_d9a83 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_0b2a3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b2a3.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wcast-align    -rdynamic CMakeFiles/cmTC_0b2a3.dir/src.cxx.o  -o cmTC_0b2a3 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wcast-qual succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_c66e0/fast && /usr/bin/make -f CMakeFiles/cmTC_c66e0.dir/build.make CMakeFiles/cmTC_c66e0.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c66e0.dir/src.cxx.o
-/usr/bin/c++    -DR-Wcast-qual   -Wcast-qual -o CMakeFiles/cmTC_c66e0.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_96864/fast && /usr/bin/make -f CMakeFiles/cmTC_96864.dir/build.make CMakeFiles/cmTC_96864.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_96864.dir/src.cxx.o
+/usr/bin/c++    -DR-Wcast-qual   -Wcast-qual -o CMakeFiles/cmTC_96864.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_c66e0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c66e0.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wcast-qual    -rdynamic CMakeFiles/cmTC_c66e0.dir/src.cxx.o  -o cmTC_c66e0 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_96864
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96864.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wcast-qual    -rdynamic CMakeFiles/cmTC_96864.dir/src.cxx.o  -o cmTC_96864 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wformat succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4a18c/fast && /usr/bin/make -f CMakeFiles/cmTC_4a18c.dir/build.make CMakeFiles/cmTC_4a18c.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4a18c.dir/src.cxx.o
-/usr/bin/c++    -DR-Wformat   -Wformat -o CMakeFiles/cmTC_4a18c.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_58693/fast && /usr/bin/make -f CMakeFiles/cmTC_58693.dir/build.make CMakeFiles/cmTC_58693.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_58693.dir/src.cxx.o
+/usr/bin/c++    -DR-Wformat   -Wformat -o CMakeFiles/cmTC_58693.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_4a18c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a18c.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wformat    -rdynamic CMakeFiles/cmTC_4a18c.dir/src.cxx.o  -o cmTC_4a18c 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_58693
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58693.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wformat    -rdynamic CMakeFiles/cmTC_58693.dir/src.cxx.o  -o cmTC_58693 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wwrite-strings succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d888e/fast && /usr/bin/make -f CMakeFiles/cmTC_d888e.dir/build.make CMakeFiles/cmTC_d888e.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d888e.dir/src.cxx.o
-/usr/bin/c++    -DR-Wwrite-strings   -Wwrite-strings -o CMakeFiles/cmTC_d888e.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_e9378/fast && /usr/bin/make -f CMakeFiles/cmTC_e9378.dir/build.make CMakeFiles/cmTC_e9378.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e9378.dir/src.cxx.o
+/usr/bin/c++    -DR-Wwrite-strings   -Wwrite-strings -o CMakeFiles/cmTC_e9378.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_d888e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d888e.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wwrite-strings    -rdynamic CMakeFiles/cmTC_d888e.dir/src.cxx.o  -o cmTC_d888e 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_e9378
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9378.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wwrite-strings    -rdynamic CMakeFiles/cmTC_e9378.dir/src.cxx.o  -o cmTC_e9378 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:
 int main() { return 0; }
 Performing C++ SOURCE FILE Test R-Wconversion succeeded with the following output:
-Change Dir: /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d658f/fast && /usr/bin/make -f CMakeFiles/cmTC_d658f.dir/build.make CMakeFiles/cmTC_d658f.dir/build
-make[1]: Entering directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d658f.dir/src.cxx.o
-/usr/bin/c++    -DR-Wconversion   -Wconversion -o CMakeFiles/cmTC_d658f.dir/src.cxx.o -c /home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp/src.cxx
+Run Build Command(s):/usr/bin/make cmTC_730ce/fast && /usr/bin/make -f CMakeFiles/cmTC_730ce.dir/build.make CMakeFiles/cmTC_730ce.dir/build
+make[1]: Entering directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_730ce.dir/src.cxx.o
+/usr/bin/c++    -DR-Wconversion   -Wconversion -o CMakeFiles/cmTC_730ce.dir/src.cxx.o -c /home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp/src.cxx
 <command-line>: warning: ISO C++11 requires whitespace after the macro name
-Linking CXX executable cmTC_d658f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d658f.dir/link.txt --verbose=1
-/usr/bin/c++   -DR-Wconversion    -rdynamic CMakeFiles/cmTC_d658f.dir/src.cxx.o  -o cmTC_d658f 
-make[1]: Leaving directory '/home/ggory15/git/HQP_Hcod/build/CMakeFiles/CMakeTmp'
+Linking CXX executable cmTC_730ce
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_730ce.dir/link.txt --verbose=1
+/usr/bin/c++   -DR-Wconversion    -rdynamic CMakeFiles/cmTC_730ce.dir/src.cxx.o  -o cmTC_730ce 
+make[1]: Leaving directory '/home/ggory15/git/weighted_hqp/build/CMakeFiles/CMakeTmp'
 
 
 Source file was:

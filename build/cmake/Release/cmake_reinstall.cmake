@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 cmake_policy(SET CMP0007 NEW)
-if(EXISTS "/home/ggory15/git/HQP_Hcod/build/install_manifest.txt")
-  execute_process(COMMAND "/usr/bin/cmake" --build "/home/ggory15/git/HQP_Hcod/build" --target uninstall --config Release)
+if(EXISTS "/home/ggory15/git/weighted_hqp/build/install_manifest.txt")
+  execute_process(COMMAND "/usr/bin/cmake" --build "/home/ggory15/git/weighted_hqp/build" --target uninstall --config Release)
 endif()
-execute_process(COMMAND "/usr/bin/cmake" --build "/home/ggory15/git/HQP_Hcod/build" --target install --config Release)
+execute_process(COMMAND "/usr/bin/cmake" --build "/home/ggory15/git/weighted_hqp/build" --target install --config Release)

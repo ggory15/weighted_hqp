@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HQP_Hcod.dir/depend.make
@@ -62,81 +62,81 @@ include CMakeFiles/HQP_Hcod.dir/flags.make
 
 CMakeFiles/HQP_Hcod.dir/src/Random.cpp.o: CMakeFiles/HQP_Hcod.dir/flags.make
 CMakeFiles/HQP_Hcod.dir/src/Random.cpp.o: ../src/Random.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/Random.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/Random.cpp.o -c /home/ggory15/git/HQP_Hcod/src/Random.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/Random.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/Random.cpp.o -c /home/ggory15/git/weighted_hqp/src/Random.cpp
 
 CMakeFiles/HQP_Hcod.dir/src/Random.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HQP_Hcod.dir/src/Random.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/HQP_Hcod/src/Random.cpp > CMakeFiles/HQP_Hcod.dir/src/Random.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/weighted_hqp/src/Random.cpp > CMakeFiles/HQP_Hcod.dir/src/Random.cpp.i
 
 CMakeFiles/HQP_Hcod.dir/src/Random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HQP_Hcod.dir/src/Random.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/HQP_Hcod/src/Random.cpp -o CMakeFiles/HQP_Hcod.dir/src/Random.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/weighted_hqp/src/Random.cpp -o CMakeFiles/HQP_Hcod.dir/src/Random.cpp.s
 
 CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.o: CMakeFiles/HQP_Hcod.dir/flags.make
 CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.o: ../src/InitSet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.o -c /home/ggory15/git/HQP_Hcod/src/InitSet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.o -c /home/ggory15/git/weighted_hqp/src/InitSet.cpp
 
 CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/HQP_Hcod/src/InitSet.cpp > CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/weighted_hqp/src/InitSet.cpp > CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.i
 
 CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/HQP_Hcod/src/InitSet.cpp -o CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/weighted_hqp/src/InitSet.cpp -o CMakeFiles/HQP_Hcod.dir/src/InitSet.cpp.s
 
 CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.o: CMakeFiles/HQP_Hcod.dir/flags.make
 CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.o: ../src/HCod.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.o -c /home/ggory15/git/HQP_Hcod/src/HCod.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.o -c /home/ggory15/git/weighted_hqp/src/HCod.cpp
 
 CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/HQP_Hcod/src/HCod.cpp > CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/weighted_hqp/src/HCod.cpp > CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.i
 
 CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/HQP_Hcod/src/HCod.cpp -o CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/weighted_hqp/src/HCod.cpp -o CMakeFiles/HQP_Hcod.dir/src/HCod.cpp.s
 
 CMakeFiles/HQP_Hcod.dir/src/cod.cpp.o: CMakeFiles/HQP_Hcod.dir/flags.make
 CMakeFiles/HQP_Hcod.dir/src/cod.cpp.o: ../src/cod.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/cod.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/cod.cpp.o -c /home/ggory15/git/HQP_Hcod/src/cod.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/cod.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/cod.cpp.o -c /home/ggory15/git/weighted_hqp/src/cod.cpp
 
 CMakeFiles/HQP_Hcod.dir/src/cod.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HQP_Hcod.dir/src/cod.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/HQP_Hcod/src/cod.cpp > CMakeFiles/HQP_Hcod.dir/src/cod.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/weighted_hqp/src/cod.cpp > CMakeFiles/HQP_Hcod.dir/src/cod.cpp.i
 
 CMakeFiles/HQP_Hcod.dir/src/cod.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HQP_Hcod.dir/src/cod.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/HQP_Hcod/src/cod.cpp -o CMakeFiles/HQP_Hcod.dir/src/cod.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/weighted_hqp/src/cod.cpp -o CMakeFiles/HQP_Hcod.dir/src/cod.cpp.s
 
 CMakeFiles/HQP_Hcod.dir/src/givens.cpp.o: CMakeFiles/HQP_Hcod.dir/flags.make
 CMakeFiles/HQP_Hcod.dir/src/givens.cpp.o: ../src/givens.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/givens.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/givens.cpp.o -c /home/ggory15/git/HQP_Hcod/src/givens.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/givens.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/givens.cpp.o -c /home/ggory15/git/weighted_hqp/src/givens.cpp
 
 CMakeFiles/HQP_Hcod.dir/src/givens.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HQP_Hcod.dir/src/givens.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/HQP_Hcod/src/givens.cpp > CMakeFiles/HQP_Hcod.dir/src/givens.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/weighted_hqp/src/givens.cpp > CMakeFiles/HQP_Hcod.dir/src/givens.cpp.i
 
 CMakeFiles/HQP_Hcod.dir/src/givens.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HQP_Hcod.dir/src/givens.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/HQP_Hcod/src/givens.cpp -o CMakeFiles/HQP_Hcod.dir/src/givens.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/weighted_hqp/src/givens.cpp -o CMakeFiles/HQP_Hcod.dir/src/givens.cpp.s
 
 CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.o: CMakeFiles/HQP_Hcod.dir/flags.make
 CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.o: ../src/ehqp_primal.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.o -c /home/ggory15/git/HQP_Hcod/src/ehqp_primal.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.o -c /home/ggory15/git/weighted_hqp/src/ehqp_primal.cpp
 
 CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/HQP_Hcod/src/ehqp_primal.cpp > CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ggory15/git/weighted_hqp/src/ehqp_primal.cpp > CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.i
 
 CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/HQP_Hcod/src/ehqp_primal.cpp -o CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ggory15/git/weighted_hqp/src/ehqp_primal.cpp -o CMakeFiles/HQP_Hcod.dir/src/ehqp_primal.cpp.s
 
 # Object files for target HQP_Hcod
 HQP_Hcod_OBJECTS = \
@@ -160,7 +160,7 @@ libHQP_Hcod.so.0.0.0: CMakeFiles/HQP_Hcod.dir/build.make
 libHQP_Hcod.so.0.0.0: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 libHQP_Hcod.so.0.0.0: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.71.0
 libHQP_Hcod.so.0.0.0: CMakeFiles/HQP_Hcod.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libHQP_Hcod.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libHQP_Hcod.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HQP_Hcod.dir/link.txt --verbose=$(VERBOSE)
 	$(CMAKE_COMMAND) -E cmake_symlink_library libHQP_Hcod.so.0.0.0 libHQP_Hcod.so.0.0.0 libHQP_Hcod.so
 
@@ -177,6 +177,6 @@ CMakeFiles/HQP_Hcod.dir/clean:
 .PHONY : CMakeFiles/HQP_Hcod.dir/clean
 
 CMakeFiles/HQP_Hcod.dir/depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build/CMakeFiles/HQP_Hcod.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build/CMakeFiles/HQP_Hcod.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/HQP_Hcod.dir/depend
 

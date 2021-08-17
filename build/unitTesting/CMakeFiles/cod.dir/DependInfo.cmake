@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ggory15/git/HQP_Hcod/unitTesting/cod.cpp" "/home/ggory15/git/HQP_Hcod/build/unitTesting/CMakeFiles/cod.dir/cod.cpp.o"
+  "/home/ggory15/git/weighted_hqp/unitTesting/cod.cpp" "/home/ggory15/git/weighted_hqp/build/unitTesting/CMakeFiles/cod.dir/cod.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -26,7 +26,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ggory15/git/HQP_Hcod/build/CMakeFiles/HQP_Hcod.dir/DependInfo.cmake"
+  "/home/ggory15/git/weighted_hqp/build/CMakeFiles/HQP_Hcod.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/ggory15/git/HQP_Hcod
-# Build directory: /home/ggory15/git/HQP_Hcod/build
+# Source directory: /home/ggory15/git/weighted_hqp
+# Build directory: /home/ggory15/git/weighted_hqp/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

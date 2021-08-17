@@ -1,4 +1,4 @@
-# Install script for directory: /home/ggory15/git/HQP_Hcod/unitTesting
+# Install script for directory: /home/ggory15/git/weighted_hqp/unitTesting
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

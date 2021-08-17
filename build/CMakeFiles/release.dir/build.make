@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 # Utility rule file for release.
 
@@ -57,7 +57,7 @@ CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
 include CMakeFiles/release.dir/progress.make
 
 CMakeFiles/release:
-	export LD_LIBRARY_PATH=/home/ggory15/kimm_catkin/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/opt/openrobots/lib:/opt/openrobots/lib:/opt/openrobots/lib && export LD_LIBRARY_PATH=/home/ggory15/kimm_catkin/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/opt/openrobots/lib:/opt/openrobots/lib:/opt/openrobots/lib && export PYTHONPATH=/home/ggory15/kimm_catkin/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/opt/openrobots/lib/python3.8/site-packages:/opt/openrobots/lib/python3/dist-packages:/opt/openrobots/lib/python3.8/site-packages:/opt/openrobots/lib/python3/dist-packages:/opt/openrobots/lib/python3/dist-packages && ! test x$$VERSION = x || ( echo Please\ set\ a\ version\ for\ this\ release && false ) && cd /home/ggory15/git/HQP_Hcod && /usr/bin/git tag -s v$$VERSION -m Release\ of\ version\ $$VERSION. && cd /home/ggory15/git/HQP_Hcod/build && cmake /home/ggory15/git/HQP_Hcod && make distcheck || ( echo Please\ fix\ distcheck\ first. && cd /home/ggory15/git/HQP_Hcod && /usr/bin/git tag -d v$$VERSION && cd /home/ggory15/git/HQP_Hcod/build && cmake /home/ggory15/git/HQP_Hcod && false ) && make dist && make distclean && echo Please,\ run\ 'git\ push\ --tags'\ and\ upload\ the\ tarball\ to\ github\ to\ finalize\ this\ release.
+	export LD_LIBRARY_PATH=/home/ggory15/kimm_catkin/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/opt/openrobots/lib:/opt/openrobots/lib && export LD_LIBRARY_PATH=/home/ggory15/kimm_catkin/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/opt/openrobots/lib:/opt/openrobots/lib && export PYTHONPATH=/home/ggory15/kimm_catkin/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/opt/openrobots/lib/python3.8/site-packages:/opt/openrobots/lib/python3/dist-packages:/opt/openrobots/lib/python3/dist-packages && ! test x$$VERSION = x || ( echo Please\ set\ a\ version\ for\ this\ release && false ) && cd /home/ggory15/git/weighted_hqp && /usr/bin/git tag -s v$$VERSION -m Release\ of\ version\ $$VERSION. && cd /home/ggory15/git/weighted_hqp/build && cmake /home/ggory15/git/weighted_hqp && make distcheck || ( echo Please\ fix\ distcheck\ first. && cd /home/ggory15/git/weighted_hqp && /usr/bin/git tag -d v$$VERSION && cd /home/ggory15/git/weighted_hqp/build && cmake /home/ggory15/git/weighted_hqp && false ) && make dist && make distclean && echo Please,\ run\ 'git\ push\ --tags'\ and\ upload\ the\ tarball\ to\ github\ to\ finalize\ this\ release.
 
 release: CMakeFiles/release
 release: CMakeFiles/release.dir/build.make
@@ -74,6 +74,6 @@ CMakeFiles/release.dir/clean:
 .PHONY : CMakeFiles/release.dir/clean
 
 CMakeFiles/release.dir/depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build/CMakeFiles/release.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build/CMakeFiles/release.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/release.dir/depend
 

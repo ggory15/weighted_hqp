@@ -46,10 +46,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
+CMAKE_SOURCE_DIR = /home/ggory15/git/weighted_hqp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 # Utility rule file for deb-src.
 
@@ -57,8 +57,8 @@ CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
 include CMakeFiles/deb-src.dir/progress.make
 
 CMakeFiles/deb-src:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ggory15/git/HQP_Hcod/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating source Debian package..."
-	cd /home/ggory15/git/HQP_Hcod && git-buildpackage --git-debian-branch=debian
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ggory15/git/weighted_hqp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating source Debian package..."
+	cd /home/ggory15/git/weighted_hqp && git-buildpackage --git-debian-branch=debian
 
 deb-src: CMakeFiles/deb-src
 deb-src: CMakeFiles/deb-src.dir/build.make
@@ -75,6 +75,6 @@ CMakeFiles/deb-src.dir/clean:
 .PHONY : CMakeFiles/deb-src.dir/clean
 
 CMakeFiles/deb-src.dir/depend:
-	cd /home/ggory15/git/HQP_Hcod/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build /home/ggory15/git/HQP_Hcod/build/CMakeFiles/deb-src.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ggory15/git/weighted_hqp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build /home/ggory15/git/weighted_hqp/build/CMakeFiles/deb-src.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/deb-src.dir/depend
 

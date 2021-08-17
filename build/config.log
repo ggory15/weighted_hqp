@@ -16,7 +16,6 @@ generator = Unix Makefiles
 PATH /home/ggory15/kimm_catkin/devel/bin
 PATH /opt/ros/noetic/bin
 PATH /opt/openrobots/bin
-PATH /opt/openrobots/bin
 PATH /home/ggory15/.local/bin
 PATH /usr/local/sbin
 PATH /usr/local/bin
@@ -31,7 +30,6 @@ PATH /snap/bin
 PKG_CONFIG_PATH /home/ggory15/kimm_catkin/devel/lib/pkgconfig
 PKG_CONFIG_PATH /opt/ros/noetic/lib/pkgconfig
 PKG_CONFIG_PATH /opt/ros/noetic/lib/x86_64-linux-gnu/pkgconfig
-PKG_CONFIG_PATH /opt/openrobots/lib/pkgconfig
 PKG_CONFIG_PATH /opt/openrobots/lib/pkgconfig
 PKG_CONFIG_PATH /opt/openrobots/lib/pkgconfig
 
@@ -49,10 +47,10 @@ CMAKE_SUPPRESS_REGENERATION =
 BUILD_SHARED_LIBS = 
 
 CMAKE_INSTALL_PREFIX = /usr/local
-PROJECT_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
-PROJECT_SOURCE_DIR = /home/ggory15/git/HQP_Hcod
-PROJECT_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
-CMAKE_BINARY_DIR = /home/ggory15/git/HQP_Hcod/build
+PROJECT_SOURCE_DIR = /home/ggory15/git/weighted_hqp
+PROJECT_SOURCE_DIR = /home/ggory15/git/weighted_hqp
+PROJECT_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
+CMAKE_BINARY_DIR = /home/ggory15/git/weighted_hqp/build
 
 CMAKE_AR = /usr/bin/ar
 CMAKE_RANLIB = /usr/bin/ranlib

@@ -50,7 +50,7 @@ iostream
 HQP_Hcod/HCod.hpp
 ../include/HQP_Hcod/HQP_Hcod/HCod.hpp
 
-/home/ggory15/git/HQP_Hcod/unitTesting/hcod.cpp
+/home/ggory15/git/weighted_hqp/unitTesting/hcod.cpp
 iostream
 -
 cstdio
@@ -58,13 +58,13 @@ cstdio
 Eigen/Core
 -
 HQP_Hcod/Random.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/Random.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/Random.hpp
 HQP_Hcod/InitSet.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/InitSet.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/InitSet.hpp
 HQP_Hcod/HCod.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/HCod.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/HCod.hpp
 HQP_Hcod/ehqp_primal.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/ehqp_primal.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/ehqp_primal.hpp
 boost/test/unit_test.hpp
 -
 boost/utility/binary.hpp

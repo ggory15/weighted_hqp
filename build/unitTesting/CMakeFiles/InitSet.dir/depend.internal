@@ -4,7 +4,7 @@
 unitTesting/CMakeFiles/InitSet.dir/InitSet.cpp.o
  ../include/HQP_Hcod/InitSet.hpp
  ../include/HQP_Hcod/Random.hpp
- /home/ggory15/git/HQP_Hcod/unitTesting/InitSet.cpp
+ /home/ggory15/git/weighted_hqp/unitTesting/InitSet.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

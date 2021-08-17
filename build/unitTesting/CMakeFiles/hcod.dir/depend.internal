@@ -7,7 +7,7 @@ unitTesting/CMakeFiles/hcod.dir/hcod.cpp.o
  ../include/HQP_Hcod/Random.hpp
  ../include/HQP_Hcod/cod.hpp
  ../include/HQP_Hcod/ehqp_primal.hpp
- /home/ggory15/git/HQP_Hcod/unitTesting/hcod.cpp
+ /home/ggory15/git/weighted_hqp/unitTesting/hcod.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

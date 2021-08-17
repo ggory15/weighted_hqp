@@ -14,7 +14,7 @@ vector
 iostream
 -
 
-/home/ggory15/git/HQP_Hcod/unitTesting/Random.cpp
+/home/ggory15/git/weighted_hqp/unitTesting/Random.cpp
 iostream
 -
 cstdio
@@ -22,7 +22,7 @@ cstdio
 Eigen/Core
 -
 HQP_Hcod/Random.hpp
-/home/ggory15/git/HQP_Hcod/unitTesting/HQP_Hcod/Random.hpp
+/home/ggory15/git/weighted_hqp/unitTesting/HQP_Hcod/Random.hpp
 Eigen/QR
 -
 boost/test/unit_test.hpp
