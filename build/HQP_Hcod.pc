@@ -1,0 +1,22 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+bindir=/usr/local/bin
+pkglibdir=/usr/local/lib/HQP_Hcod
+includedir=/usr/local/include
+datarootdir=/usr/local/share
+pkgdatarootdir=/usr/local/share
+docdir=/usr/local/share/doc/HQP_Hcod
+doxygendocdir=/usr/local/share/doc/HQP_Hcod/doxygen-html
+
+Name: HQP_Hcod
+Description: HQP_Hcod (original)
+URL: http://github.com/laas/soth
+Version: 0.0.0
+Requires: eigen3 >= 3.2.0
+Conflicts: 
+Libs: -L${libdir} 
+Libs.private: 
+Cflags:  -I${includedir}
+
+

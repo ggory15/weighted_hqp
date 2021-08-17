@@ -1,0 +1,64 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+
+
+SET(PROJECT_NAME HQP_Hcod)
+SET(PROJECT_DESCRIPTION "HQP_Hcod (original)")
+SET(PROJECT_URL "http://github.com/laas/soth")
+
+# Disable -Werror on Unix for now.
+SET(CXX_DISABLE_WERROR True)
+SET(CMAKE_VERBOSE_MAKEFILE true)
+SET(CMAKE_BUILD_TYPE "Release")
+#add_compile_options(-std=c++17 -O3)
+
+INCLUDE(cmake/base.cmake)
+INCLUDE(cmake/boost.cmake)
+INCLUDE(cmake/eigen.cmake)
+INCLUDE(cmake/python.cmake)
+INCLUDE(cmake/ide.cmake)
+INCLUDE(cmake/apple.cmake)
+
+
+COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX)
+PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
+SET(ADD_CXX_PATCH TRUE)
+ADD_DEFINITIONS("-fpermissive")
+
+ADD_PROJECT_DEPENDENCY(Eigen3 REQUIRED PKG_CONFIG_REQUIRES "eigen3 >= 3.2.0")
+
+ADD_DEFINITIONS(-DEIGEN_RUNTIME_NO_MALLOC)
+find_package(Boost REQUIRED COMPONENTS system unit_test_framework)
+
+SET(${PROJECT_NAME}_HEADERS
+  include/HQP_Hcod/Random.hpp
+  include/HQP_Hcod/InitSet.hpp
+  include/HQP_Hcod/HCod.hpp
+  include/HQP_Hcod/cod.hpp
+  include/HQP_Hcod/givens.hpp
+  include/HQP_Hcod/ehqp_primal.hpp
+  )
+
+SET(${PROJECT_NAME}_SOURCES
+  src/Random.cpp
+  src/InitSet.cpp
+  src/HCod.cpp
+  src/cod.cpp
+  src/givens.cpp
+  src/ehqp_primal.cpp
+  )
+
+ADD_HEADER_GROUP(${PROJECT_NAME}_HEADERS)
+ADD_SOURCE_GROUP(${PROJECT_NAME}_SOURCES)
+
+ADD_LIBRARY(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES} ${${PROJECT_NAME}_HEADERS})
+
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} SYSTEM PUBLIC ${EIGEN3_INCLUDE_DIR})
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC $<INSTALL_INTERFACE:include>)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} PUBLIC ${Boost_LIBRARIES})
+
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION})
+INSTALL(TARGETS ${PROJECT_NAME} EXPORT ${TARGETS_EXPORT_NAME} DESTINATION lib)
+
+ADD_SUBDIRECTORY(unitTesting)
+
