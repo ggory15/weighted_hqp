@@ -11,19 +11,22 @@ MACRO(ADD_TESTCASE NAME PKGS)
   STRING(REGEX REPLACE "-" "_" MODULE_NAME ${MODULE_NAME})
   ADD_TEST_CFLAGS(${NAME} "-DBOOST_TEST_MODULE=${MODULE_NAME}") 
 
-  FOREACH(PKG ${PKGS})
-    PKG_CONFIG_USE_DEPENDENCY(${NAME} ${PKG})
-  ENDFOREACH(PKG)
-
+  # FOREACH(PKG ${PKGS})
+  #   PKG_CONFIG_USE_DEPENDENCY(${NAME} ${PKG})
+  # ENDFOREACH(PKG)
+  #TARGET_INCLUDE_DIRECTORIES(${NAME} ${PROJECT_NAME} ${kimm_qpoases_INCLUDE_DIRS})
   TARGET_LINK_LIBRARIES(${NAME} ${PROJECT_NAME})
-  TARGET_LINK_LIBRARIES(${NAME} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+  TARGET_LINK_LIBRARIES(${NAME} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${kimm_qpoases_LIBRARIES})
+
 ENDMACRO(ADD_TESTCASE)
 
 # --- RULES -------------------------------------------------------------------
 # --- RULES -------------------------------------------------------------------
 # --- RULES -------------------------------------------------------------------
 
-ADD_TESTCASE(Random "eigen3")
-ADD_TESTCASE(InitSet "eigen3")
-ADD_TESTCASE(hcod "eigen3")
-ADD_TESTCASE(cod "eigen3")
+ADD_TESTCASE(Random "kimm_qpoases")
+ADD_TESTCASE(InitSet "kimm_qpoases")
+ADD_TESTCASE(hcod "kimm_qpoases")
+ADD_TESTCASE(cod "kimm_qpoases")
+ADD_TESTCASE(ehqp_test "kimm_qpoases")
+ADD_TESTCASE(ihqp_test "kimm_qpoases")

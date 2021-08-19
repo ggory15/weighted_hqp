@@ -10,7 +10,7 @@
 namespace hcod{
     typedef struct H_structure {   
         Eigen::MatrixXd A;
-        Eigen::VectorXd b;
+        Eigen::MatrixXd b;
         Eigen::VectorXi btype;
 
         int mmax;
@@ -35,7 +35,7 @@ namespace hcod{
 
     class HCod{
         public:
-            HCod(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::VectorXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound);
+            HCod(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound);
             ~HCod(){};
         
         private: 
@@ -53,7 +53,7 @@ namespace hcod{
             
         private:
             std::vector<Eigen::MatrixXd> A_;
-            std::vector<Eigen::VectorXd> b_;
+            std::vector<Eigen::MatrixXd> b_;
             std::vector<Eigen::VectorXi> btype_;
             std::vector<Eigen::VectorXi> aset_init_, aset_bound_;
 

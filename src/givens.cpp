@@ -4,13 +4,16 @@
 using namespace std;
 
 namespace hcod{
-    Givens::Givens(const Eigen::VectorXd &x, const unsigned int &i, const unsigned int &j)
-    : x_(x), i_(i), j_(j)
+    Givens::Givens()
     {
-        this->compute_rotation();
+        
     }
     
-    void Givens::compute_rotation(){
+    void Givens::compute_rotation(const Eigen::VectorXd &x, const unsigned int &i, const unsigned int &j){
+        x_ = x;
+        i_= i;
+        j_ = j;
+
         m_ = x_.size();
         R_.setIdentity(m_, m_);
         double xi = x_(i_);
@@ -27,7 +30,7 @@ namespace hcod{
             c = s * theta;
         }
         else{
-            theta = -xi/xj;
+            theta = -xj/xi;
             c = 1 / sqrt(1 + theta * theta);
             s = c * theta;
         }

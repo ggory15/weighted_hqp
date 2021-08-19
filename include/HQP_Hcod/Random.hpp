@@ -8,7 +8,7 @@
 namespace hcod{
     class RandStackWithWeight{
         public:
-            RandStackWithWeight(const unsigned int & nh, const unsigned int &p, const Eigen::VectorXi & m, const Eigen::VectorXi & r);
+            RandStackWithWeight(const unsigned int & nh, const unsigned int &p, const Eigen::VectorXi & m, const Eigen::VectorXi & r, const bool & eq_only = true);
             ~RandStackWithWeight(){};
         
         private: 
@@ -19,7 +19,7 @@ namespace hcod{
             std::vector<Eigen::MatrixXd> getA(){
                 return A_;
             };
-            std::vector<Eigen::VectorXd> getb(){
+            std::vector<Eigen::MatrixXd> getb(){
                 return b_;
             };
             std::vector<Eigen::MatrixXd> getW(){
@@ -31,27 +31,24 @@ namespace hcod{
             Eigen::MatrixXd getAu(){
                 return Au_;
             };
-            Eigen::VectorXd getbu(){
+            Eigen::MatrixXd getbu(){
                 return bu_;
             };
 
         private:
             Eigen::Vector2d svbound_;
             std::vector<Eigen::MatrixXd> A_;
-            std::vector<Eigen::VectorXd> b_;
+            std::vector<Eigen::MatrixXd> b_;
             std::vector<Eigen::MatrixXd> W_;
             std::vector<Eigen::VectorXi> btype_;
             Eigen::MatrixXd Au_;
-            Eigen::VectorXd bu_;
+            Eigen::MatrixXd bu_;
 
             unsigned int nh_;
             unsigned int p_;
             Eigen::VectorXi m_;
             Eigen::VectorXi r_;
-
-
-           
-
+            bool eq_only_;
     };
 }
 

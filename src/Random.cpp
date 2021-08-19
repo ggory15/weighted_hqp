@@ -1,10 +1,12 @@
 #include "HQP_Hcod/Random.hpp"
+#include <iterator>
+#include <algorithm>
 
 using namespace std;
 
 namespace hcod{
-    RandStackWithWeight::RandStackWithWeight(const unsigned int & nh, const unsigned int &p, const Eigen::VectorXi & m, const Eigen::VectorXi & r)
-    : nh_(nh), p_(p), m_(m), r_(r)
+    RandStackWithWeight::RandStackWithWeight(const unsigned int & nh, const unsigned int &p, const Eigen::VectorXi & m, const Eigen::VectorXi & r, const bool & eq_only)
+    : nh_(nh), p_(p), m_(m), r_(r), eq_only_(eq_only)
     {
         svbound_(0) = 0.5;
         svbound_(1) = 1.5;
@@ -15,9 +17,14 @@ namespace hcod{
         W_.clear();
 
         Au_.setZero(m_.sum(), nh_);
-        bu_.setRandom(m_.sum());
+        if (eq_only){
+            bu_.setZero(m_.sum(), 1);
+        }
+        else {
+            bu_.setZero(m_.sum(), 2);
+        }
 
-        this->compute_random();
+       this->compute_random();
     }
 
     void RandStackWithWeight::compute_random(){
@@ -32,9 +39,27 @@ namespace hcod{
             mk = m_(i);
             rk = r_(i);
             zk = nh_ - rak - rk;
+
+            Eigen::MatrixXd v;
+            if (!eq_only_){
+                v =  Eigen::MatrixXd::Random(mk, 2);
+                for(auto row : v.rowwise())
+                    std::sort(row.begin(), row.end());
+                b_.push_back(v);
+                int nEq = std::round(std::abs(v(0, 0)) * mk);
+
+                Eigen::VectorXi type_tmp = Eigen::VectorXi::Ones(mk);
+                for (int i=0; i < 1; i++)
+                    type_tmp(nEq + i) = std::ceil(std::abs(v(0, 1)) * 3) + 1;
+
+               btype_.push_back(type_tmp);
+            }
+            else{
+                v =  Eigen::MatrixXd::Random(mk, 1);
+                b_.push_back(v);
+                btype_.push_back(Eigen::VectorXi::Ones(mk));
+            }           
             
-            b_.push_back(Eigen::VectorXd::Random(mk));
-            btype_.push_back(Eigen::VectorXi::Ones(mk));
             Eigen::MatrixXd Sk(rk, rk);
             Sk.setZero();
             Sk.diagonal() = Eigen::VectorXd::Random(rk) + Eigen::VectorXd::Ones(rk) * svbound_(0);
@@ -60,11 +85,11 @@ namespace hcod{
         Au_ = Au_ * this->mrand(nh_, nh_, Eigen::Vector2d(1, 1));
         for (unsigned int i=0; i<p_; i++){
             if (i == 0){
-                bu_.head(m_(i)) = b_[i];
+                bu_.topRows(m_(i)) = b_[i];
                 A_.push_back(Au_.topRows(m_(i)));
             }
             else{
-                bu_.segment(m_.head(i).sum(), mk) = b_[i];
+                bu_.block(m_.head(i).sum(), 0, mk, b_[i].cols()) = b_[i];
                 A_.push_back(Au_.block(m_.head(i).sum(), 0, m_(i), nh_));
             }
         }

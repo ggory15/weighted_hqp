@@ -4,6 +4,7 @@
 #include <Eigen/Dense>
 #include <vector>
 #include <iostream>
+#include "HQP_Hcod/givens.hpp"
 
 namespace hcod{
     class Cod{
@@ -38,6 +39,7 @@ namespace hcod{
            Eigen::MatrixXd A_, Q_, R_, E_, L_, W_, L_permute_, W_permute_ ;
            double THR_;
            int rankA_;
+           Givens* givens_t;
            
     };
 }

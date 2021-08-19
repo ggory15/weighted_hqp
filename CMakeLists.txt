@@ -25,10 +25,15 @@ PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
 SET(ADD_CXX_PATCH TRUE)
 ADD_DEFINITIONS("-fpermissive")
 
-ADD_PROJECT_DEPENDENCY(Eigen3 REQUIRED PKG_CONFIG_REQUIRES "eigen3 >= 3.2.0")
+#ADD_PROJECT_DEPENDENCY(Eigen3 REQUIRED PKG_CONFIG_REQUIRES "eigen3 >= 3.2.0")
 
 ADD_DEFINITIONS(-DEIGEN_RUNTIME_NO_MALLOC)
 find_package(Boost REQUIRED COMPONENTS system unit_test_framework)
+find_package(kimm_qpoases REQUIRED)
+
+SET(${EIGEN_INCLUDE_DIR} 
+  3rdparty/Eigen3
+)
 
 SET(${PROJECT_NAME}_HEADERS
   include/HQP_Hcod/Random.hpp
@@ -37,6 +42,9 @@ SET(${PROJECT_NAME}_HEADERS
   include/HQP_Hcod/cod.hpp
   include/HQP_Hcod/givens.hpp
   include/HQP_Hcod/ehqp_primal.hpp
+  include/HQP_Hcod/eHQP_solver.hpp
+  include/HQP_Hcod/iHQP_solver.hpp
+  include/HQP_Hcod/step_length.hpp
   )
 
 SET(${PROJECT_NAME}_SOURCES
@@ -46,14 +54,20 @@ SET(${PROJECT_NAME}_SOURCES
   src/cod.cpp
   src/givens.cpp
   src/ehqp_primal.cpp
+  src/eHQP_solver.cpp
+  src/iHQP_solver.cpp
+  src/step_length.cpp
   )
+
+  include_directories(${PROJECT_SOURCE_DIR}/3rdparty/Eigen3)
+
 
 ADD_HEADER_GROUP(${PROJECT_NAME}_HEADERS)
 ADD_SOURCE_GROUP(${PROJECT_NAME}_SOURCES)
 
 ADD_LIBRARY(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES} ${${PROJECT_NAME}_HEADERS})
 
-TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} SYSTEM PUBLIC ${EIGEN3_INCLUDE_DIR})
+TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} SYSTEM PUBLIC ${EIGEN_INCLUDE_DIR} {kimm_qpoases_INCLUDE_DIRS})
 TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} PUBLIC $<INSTALL_INTERFACE:include>)
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} PUBLIC ${Boost_LIBRARIES})
 

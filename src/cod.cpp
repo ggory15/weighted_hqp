@@ -1,5 +1,5 @@
 #include "HQP_Hcod/cod.hpp"
-#include "HQP_Hcod/givens.hpp"
+
 #include <assert.h>
 #include <Eigen/QR>
 
@@ -10,7 +10,9 @@ namespace hcod{
     : A_(A), THR_(THR)
     {   
         W_.setIdentity(A_.rows(), A_.rows());
+        givens_t = new Givens();
         this->computation();
+        
     }
 
     void Cod::computation(){
@@ -24,8 +26,9 @@ namespace hcod{
         if (rankA_ < A_.rows())
             for (int i= rankA_-1; i>=0; i--)
                 for (int j=A_.rows()-1; i>=rankA_; i--){
-                    Givens givens_t(L_.col(i), i, j);
-                    Eigen::MatrixXd U = givens_t.getR().transpose();
+                    
+                    givens_t->compute_rotation(L_.col(i), i, j);
+                    Eigen::MatrixXd U = givens_t->getR().transpose();
                     L_ = U * L_; 
                     W_ = W_ * U.transpose();
                 }

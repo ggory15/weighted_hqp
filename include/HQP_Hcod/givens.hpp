@@ -8,11 +8,12 @@
 namespace hcod{
     class Givens{
         public:
-            Givens(const Eigen::VectorXd &x, const unsigned int &i, const unsigned int &j);
+            Givens();
             ~Givens(){};
+            void compute_rotation(const Eigen::VectorXd &x, const unsigned int &i, const unsigned int &j);        
         
         private: 
-            void compute_rotation();          
+              
 
         public:
            Eigen::MatrixXd getR(){

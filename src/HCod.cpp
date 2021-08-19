@@ -6,7 +6,7 @@ using namespace std;
 #define EPS 1e-8
 
 namespace hcod{
-    HCod::HCod(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::VectorXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound)
+    HCod::HCod(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound)
     : A_(A), b_(b), btype_(btype), aset_init_(aset_init), aset_bound_(aset_bound)
     {
         p_ = A_.size();
@@ -111,6 +111,7 @@ namespace hcod{
         H_structure hk = h_[index];
         cout << "mmax" << hk.mmax << endl;
         cout << "active" << hk.active.transpose() << endl;
+        cout << "acive size" << hk.active.size() << endl;
         cout << "bound" << hk.bound.transpose() << endl;
         cout << "iw" << hk.iw.transpose() << endl;
         cout << "fw" << hk.fw.transpose() << endl;

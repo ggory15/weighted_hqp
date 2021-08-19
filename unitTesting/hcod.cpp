@@ -9,7 +9,11 @@
 #include <boost/test/unit_test.hpp>
 #include <boost/utility/binary.hpp>
 #include <chrono>
-
+#include <iostream>     // std::cout
+#include <algorithm>    // std::set_difference, std::sort
+#include <vector>       // std::vector
+#include <numeric>
+#include <list>
 
 using namespace hcod;
 using namespace Eigen;
@@ -19,83 +23,97 @@ using std::chrono::duration_cast;
 using std::chrono::duration;
 using std::chrono::milliseconds;
 
-//#define DEBUG
-
 BOOST_AUTO_TEST_SUITE ( BOOST_TEST_MODULE )
 
 BOOST_AUTO_TEST_CASE ( test_random )
 {   
-    int n_size = 20;
-    RandStackWithWeight RandStack(n_size, 2, Vector2i(8, 8), Vector2i(8, 8));
-    Initset Init_active(RandStack.getbtype());
-    auto t1 = high_resolution_clock::now();
-    HCod Hcod_t(RandStack.getA(), RandStack.getb(), RandStack.getbtype(),Init_active.getactiveset(), Init_active.getbounds());
+    int n_size = 10;
+    RandStackWithWeight RandStack(n_size, 2, Vector2i(3, 3), Vector2i(3, 3), false);
+   // Initset Init_active(RandStack.getbtype());
+   // HCod Hcod_t(RandStack.getA(), RandStack.getb(), RandStack.getbtype(),Init_active.getactiveset(), Init_active.getbounds());
 
-#ifdef DEBUG
     vector<MatrixXd> A;
-    vector<VectorXd> b;
+    vector<MatrixXd> b;
     vector<VectorXi> btype;
-    MatrixXd A1(2, 3), A2(1, 3);
-    VectorXd b2(1);
-    VectorXi btype2(1);
-    A1.row(0) << 1.4013, -0.1297, -0.0557;
-    A1.row(1) << 0.1266, 1.3881, 0.4328;
-    A2.row(0) << 0.2520, -0.2292, 1.0700;
+    MatrixXd A1(1, 3), A2(2, 3);
+    MatrixXd b1(1, 2), b2(2, 2);
+    VectorXi btype1(1), btype2(2);
+
+    A2.row(0) << 0.902944243066385,0.872419711644596,-0.342627652981386;
+    A2.row(1) << .478939420486154,0.632568327934086,0.665381814372249;
+    b1.row(0) << -0.6854, -0.6018;
+    b2.row(0) << -0.841395509866952,-0.159142597519700;
+    b2.row(1) << -0.024672785579257,0.752290695058151;
+    btype1(0) = 4;
+    btype2 << 1, 3;
+
     A.push_back(A1);
     A.push_back(A2);
-    b.push_back(Vector2d(0.8356, 0.2442));
-    b2(0) = 0.8630;
+    b.push_back(b1);
     b.push_back(b2);
-    btype.push_back(Vector2i(1, 1));
-    btype2(0) = 1;
+    btype.push_back(btype1);
     btype.push_back(btype2);
-    
+
     Initset Init_active(btype);
-    HCod Hcod_t(A, b, btype,Init_active.getactiveset(), Init_active.getbounds());
-#endif   
+    HCod Hcod_t(A, b, btype, Init_active.getactiveset(), Init_active.getbounds());
 
-    VectorXd y0, x0, y1;
-    y0.setZero(n_size);
-    x0.setZero(n_size);
-    y1.setZero(n_size);
-    
-    double kcheck = 0;
-    int iter = 1;
 
-#ifdef DEBUG
     cout << "Level 0" << endl;
     Hcod_t.print_h_structure(0);
     cout << " " << endl;
     cout << "Level 1" << endl;
     Hcod_t.print_h_structure(1);
     cout << " " << endl;
-    cout << " " << endl;
-#endif
+    cout << " " << endl; 
 
-    Ehqp_primal ehqp_primal(Hcod_t.geth(),Hcod_t.getY());
-    auto t2 = high_resolution_clock::now();
-    auto ms_int = duration_cast<milliseconds>(t2 - t1);
-    duration<double, std::milli> ms_double = t2 - t1;
-    std::cout << ms_double.count() << "ms" << endl;
-    cout << " " << endl;
+    // int first[] = {5,10,15,20,25};
+    // int second[] = {50,40,30,20,10};
 
-    cout << "HCOD Solution: " << ehqp_primal.getx().transpose() << endl;
-   
+    // Eigen::VectorXi a, bb, c;
+    // a = Eigen::VectorXi::LinSpaced(6 ,0, 5);
+    // bb= Eigen::VectorXi::LinSpaced(6 ,2, 7);
+    // c = Eigen::VectorXi(a.size());
     
-    
-    MatrixXd J1 = RandStack.getA()[0];
-    MatrixXd J2 = RandStack.getA()[1];
-    VectorXd x1 = RandStack.getb()[0];
-    VectorXd x2 = RandStack.getb()[1];
-    MatrixXd J1_inv = J1.completeOrthogonalDecomposition().pseudoInverse();
-    MatrixXd N1 = MatrixXd::Identity(n_size, n_size) - J1_inv * J1;
-    VectorXd q1_star = J1_inv* x1;
-    MatrixXd J2_inv = (J2 * N1).completeOrthogonalDecomposition().pseudoInverse();
-    VectorXd q2_star = J2_inv * (x2 - J2 * q1_star);
+    //  auto it = std::set_difference(a.data(), a.data() + a.size(), 
+    //                               bb.data(), bb.data() + bb.size(), 
+    //                               c.data());
+    //    c.conservativeResize(std::distance(c.data(), it)); // resize the result
+    // std::cout << c.transpose() << " " << bb.transpose()  << std::endl;       
 
-    cout << "Pinv Solution: " << (q1_star + q2_star).transpose() << endl;
+    Eigen::VectorXi diff_vec(5);
+    diff_vec.setOnes();
+    cout << diff_vec.transpose() << endl;
+    diff_vec.conservativeResize(std::distance(diff_vec.data(), diff_vec.data()+ 10)); 
+    
+    diff_vec(6) = 0;
+cout << diff_vec.transpose() << endl;
+    // diff_vec.size() - std::distance(diff_vec.begin(), found) - 1
+
+std::cout << std::distance(diff_vec.begin(), std::find_if(diff_vec.begin(), diff_vec.end(), [](const auto& x) { return x != 0; }))  << '\n';
+
+    for (int i=0; i<3; i++){
+        cout << i << endl;
+        break;
+    }
+
+    Eigen::VectorXi idx_vec(3);
+    idx_vec << 1, 2, 4;
+    cout << diff_vec(idx_vec.array()) << endl;
+    Eigen::MatrixXd test_mat(6, 6);
+    test_mat.setRandom();
+    test_mat(idx_vec.array(), idx_vec.array());
+    cout << test_mat << endl;
+    cout << test_mat(idx_vec, idx_vec) << endl;
+    
+    // Eigen::VectorXd csum(3), flip_vec;
+    // flip_vec.setRandom(3);
+    // cout << "fi" << flip_vec.transpose() << endl;
+    // flip_vec = flip_vec.reverse();
+    // cout << "se" << flip_vec.transpose() << endl;
+    // std::partial_sum(flip_vec.begin(), flip_vec.end(), csum.begin(), std::plus<double>());
+    // cout << "cu" << csum.transpose() << endl;
+ 
 }
 
 	
 BOOST_AUTO_TEST_SUITE_END ()
-
