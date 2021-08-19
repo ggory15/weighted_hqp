@@ -1,4 +1,4 @@
-#include "HQP_Hcod/HCod.hpp"
+#include "weighted_hqp/HCod.hpp"
 #include <assert.h>
 
 using namespace std;

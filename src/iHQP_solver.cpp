@@ -1,4 +1,4 @@
-#include "HQP_Hcod/iHQP_solver.hpp"
+#include "weighted_hqp/iHQP_solver.hpp"
 
 #include <assert.h>
 #include <numeric>

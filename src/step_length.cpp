@@ -1,4 +1,4 @@
-#include "HQP_Hcod/step_length.hpp"
+#include "weighted_hqp/step_length.hpp"
 #include <assert.h>
 
 using namespace std;

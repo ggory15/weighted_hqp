@@ -1,4 +1,4 @@
-#include "HQP_Hcod/InitSet.hpp"
+#include "weighted_hqp/InitSet.hpp"
 #include <assert.h>
 
 using namespace std;

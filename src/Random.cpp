@@ -1,4 +1,4 @@
-#include "HQP_Hcod/Random.hpp"
+#include "weighted_hqp/Random.hpp"
 #include <iterator>
 #include <algorithm>
 

@@ -1,12 +1,11 @@
 #include <iostream>
 #include <cstdio>
 #include <Eigen/Core>
-#include "HQP_Hcod/Random.hpp"
-#include "HQP_Hcod/iHQP_solver.hpp"
-#include "HQP_Hcod/InitSet.hpp"
+#include "weighted_hqp/Random.hpp"
+#include "weighted_hqp/iHQP_solver.hpp"
+#include "weighted_hqp/InitSet.hpp"
 
-#include <boost/test/unit_test.hpp>
-#include <boost/utility/binary.hpp>
+#include <gtest/gtest.h>
 #include <chrono>
 // #include <qpOASES.hpp>
 
@@ -18,11 +17,7 @@ using std::chrono::duration_cast;
 using std::chrono::duration;
 using std::chrono::milliseconds;
 
-//#define DEBUG
-
-BOOST_AUTO_TEST_SUITE ( BOOST_TEST_MODULE )
-
-BOOST_AUTO_TEST_CASE ( test_random )
+TEST(TestSuite, testCase1)
 {   
     vector<MatrixXd> A;
     vector<MatrixXd> b;
@@ -83,4 +78,7 @@ BOOST_AUTO_TEST_CASE ( test_random )
 }
 
 	
-BOOST_AUTO_TEST_SUITE_END ()
+int main(int argc, char **argv){
+	testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}

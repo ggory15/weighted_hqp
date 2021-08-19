@@ -1,4 +1,4 @@
-#include "HQP_Hcod/ehqp_primal.hpp"
+#include "weighted_hqp/ehqp_primal.hpp"
 #include <assert.h>
 #include <Eigen/QR>
 using namespace std;

@@ -1,4 +1,4 @@
-#include "HQP_Hcod/cod.hpp"
+#include "weighted_hqp/cod.hpp"
 
 #include <assert.h>
 #include <Eigen/QR>

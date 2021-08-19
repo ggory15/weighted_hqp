@@ -1,4 +1,4 @@
-#include "HQP_Hcod/eHQP_solver.hpp"
+#include "weighted_hqp/eHQP_solver.hpp"
 #include <assert.h>
 
 using namespace std;
