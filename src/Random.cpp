@@ -39,7 +39,8 @@ namespace hcod{
             mk = m_(i);
             rk = r_(i);
             zk = nh_ - rak - rk;
-
+            
+            srand((unsigned int) time(0));
             Eigen::MatrixXd v;
             if (!eq_only_){
                 v =  Eigen::MatrixXd::Random(mk, 2);

@@ -30,13 +30,13 @@ BOOST_AUTO_TEST_CASE ( test_random )
     
     eHQP_solver eHQP_(RandStack.getA(), RandStack.getb(), RandStack.getbtype(),Init_active.getactiveset(), Init_active.getbounds());
 
-    // auto t1 = high_resolution_clock::now();
+    auto t1 = high_resolution_clock::now();
     Eigen::VectorXd x_opt = eHQP_.solve();
-    // auto t2 = high_resolution_clock::now();
-    // auto ms_int = duration_cast<milliseconds>(t2 - t1);
-    // duration<double, std::milli> ms_double = t2 - t1;
-    // std::cout << ms_double.count() << "ms" << endl;
-    // cout << " " << endl;
+    auto t2 = high_resolution_clock::now();
+    auto ms_int = duration_cast<milliseconds>(t2 - t1);
+    duration<double, std::milli> ms_double = t2 - t1;
+    std::cout << ms_double.count() << "ms" << endl;
+    cout << " " << endl;
 
     cout << "HCOD Solution: " << x_opt.transpose() << endl;
 
