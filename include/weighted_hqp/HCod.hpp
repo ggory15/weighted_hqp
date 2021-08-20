@@ -31,11 +31,27 @@ namespace hcod{
         Eigen::VectorXi bound;
 
         Eigen::MatrixXd A_act;
+
+        // for weighted function
+        Eigen::MatrixXd Wk;
+        Eigen::MatrixXd AkWk;
+        Eigen::VectorXd sol;
+
+        Eigen::MatrixXd Wj;
+        Eigen::MatrixXd Lj;
+        Eigen::MatrixXd Hj;
+        Eigen::MatrixXd Aj;
+
+        Eigen::MatrixXd Y, Yupj, Ydownj;
+
+        int mj, nj, rj, rpj, raj, rupj;
+        Eigen::VectorXi iwj, imj, fwj, fmj, idx_nh_vec;
     } h_structure;   
 
     class HCod{
         public:
             HCod(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound);
+            HCod(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound, const std::vector<Eigen::MatrixXd> &W);
             ~HCod(){};
         
         private: 
@@ -55,12 +71,14 @@ namespace hcod{
             std::vector<Eigen::MatrixXd> A_;
             std::vector<Eigen::MatrixXd> b_;
             std::vector<Eigen::VectorXi> btype_;
+            std::vector<Eigen::MatrixXd> W_;
             std::vector<Eigen::VectorXi> aset_init_, aset_bound_;
 
             int p_, nh_;
             std::vector<H_structure> h_;
             Cod* cod_; 
             Eigen::MatrixXd  Y_;
+            bool _isweighted;
     };
 }
 

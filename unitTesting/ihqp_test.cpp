@@ -42,7 +42,7 @@ TEST(TestSuite, testCase1)
     // btype.push_back(btype2);
     
 
-    int n_size = 20;
+    int n_size = 10;
     RandStackWithWeight RandStack(n_size, 3, Vector3i(3, 3, 3), Vector3i(3, 3, 3), false);
 
     A = RandStack.getA();
