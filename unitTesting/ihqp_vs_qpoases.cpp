@@ -208,7 +208,7 @@ TEST(TestSuite, testCase1)
             A2_qp.row(eq1 + ineq1 - 1) = -A[0].row(i);
             b2_up.conservativeResize(eq1 + ineq1);
             b2_low.conservativeResize(eq1 + ineq1);
-            b2_up(eq1 + ineq1 - 1) = -b[0](i,0) +(A[1].row(i) * x1_opt)(0,0) ;
+            b2_up(eq1 + ineq1 - 1) = -b[0](i,0) +(A[0].row(i) * x1_opt)(0,0) ;
             b2_low(eq1 + ineq1 - 1) =-10000.0;
         }
         else if (btype[0](i) == 4){
@@ -217,7 +217,7 @@ TEST(TestSuite, testCase1)
             A2_qp.row(eq1 + ineq1 - 1) = A[0].row(i);
             b2_up.conservativeResize(eq1 + ineq1);
             b2_low.conservativeResize(eq1 + ineq1);
-            b2_up(eq1 + ineq1 - 1) = b[0](i,1)- (A[1].row(i) * x1_opt)(0,0);
+            b2_up(eq1 + ineq1 - 1) = b[0](i,1)- (A[0].row(i) * x1_opt)(0,0);
             b2_low(eq1 + ineq1 - 1) =-10000.0;
         }
         else{
@@ -226,10 +226,11 @@ TEST(TestSuite, testCase1)
             A2_qp.row(eq1 + ineq1 - 1) = A[0].row(i);
             b2_up.conservativeResize(eq1 + ineq1);
             b2_low.conservativeResize(eq1 + ineq1);
-            b2_up(eq1 + ineq1 - 1) = b[0](i,1)+ (A[1].row(i) * x1_opt)(0,0);
-            b2_low(eq1 + ineq1 - 1) = b[0](i,0)- (A[1].row(i) * x1_opt)(0,0);
+            b2_up(eq1 + ineq1 - 1) = b[0](i,1) - (A[0].row(i) * x1_opt)(0,0);
+            b2_low(eq1 + ineq1 - 1) = b[0](i,0)- (A[0].row(i) * x1_opt)(0,0);
         }
     }
+
 
     m_solver2 = SQProblem(n_size, eq1 + ineq1);
     m_solver2.setOptions(m_options);
