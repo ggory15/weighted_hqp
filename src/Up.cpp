@@ -305,12 +305,10 @@ cout << "h_[0].H(  " << h_[0].H  << endl;
 cout << "h_[1].H(  " << h_[1].H  << endl;
 #endif                
         }
-cout << "ho" << endl;
         
 #ifdef DEBUG
 cout << "Y_  " << Y_  << endl;
 #endif                  
-        cout << "here" << endl;
         return true;
     }
 }

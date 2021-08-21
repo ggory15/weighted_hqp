@@ -19,38 +19,35 @@ using std::chrono::milliseconds;
 
 //#define DEBUG
 
-Eigen::VectorXd validate_wehqp(vector<MatrixXd> A, vector<MatrixXd> b, vector<MatrixXd> W){
+bool evaluation(vector<MatrixXd> A, vector<MatrixXd> b, vector<VectorXi> btype, Eigen::VectorXd sol){
     int task_level = A.size();
-    int dof = A[0].cols();
-    VectorXd prev_sol, current_sol, total_sol;
-    prev_sol.setZero(dof);
-    current_sol.setZero(dof);
-    total_sol.setZero(dof);
+    int dof = A[0].rows();
 
     for (int i=0; i<task_level; i++){
-        MatrixXd Ai = A[i], Aj, AWi;
-        MatrixXd bi = b[i];
-        MatrixXd Wi = W[i];
-        Wi = Wi.completeOrthogonalDecomposition().pseudoInverse();
-        Wi = Wi.array().sqrt();
-        
-        MatrixXd Ni;
-        Ni.setIdentity(dof, dof);
-
-        for (int j= 0; j<=i-1; j++){
-            Aj = A[j] * Wi * Ni;
-            Ni = Ni * (MatrixXd::Identity(dof, dof) - Aj.completeOrthogonalDecomposition().pseudoInverse() * Aj);
+        for (int j=0; j<b[i].rows(); j++){
+            if (btype[i](j) == 1){
+               if (std::abs( (A[i].row(j) * sol) - b[i](j, 0)) > 0.001)
+                    return false;
+            }
+            if (btype[i](j) == 2){
+                if ( (A[i].row(j) * sol)(0, 0)  > b[i](j, 1))
+                    return false;
+                else if ( (A[i].row(j) * sol)(0, 0) < b[i](j, 0))
+                    return false;
+            }
+            if (btype[i](j) == 3){
+                if ( (A[i].row(j) * sol)(0, 0) < b[i](j, 0))
+                    return false;
+            }
+            if (btype[i](j) == 4){
+                if ( (A[i].row(j) * sol)(0, 0) > b[i](j, 1))
+                    return false;
+            }
         }
-        AWi = Ai * Wi * Ni;
-
-        current_sol = Wi * AWi.completeOrthogonalDecomposition().pseudoInverse() * (bi - Ai* prev_sol);
-
-        total_sol += current_sol;
-        prev_sol = total_sol;
     }
-
-    return total_sol;
+    return true;
 }
+
 
 TEST(TestSuite, testCase1){
    
@@ -100,14 +97,14 @@ TEST(TestSuite, testCase1){
     W.push_back(W2);
     W.push_back(W3);
 
-    // int n_size = 10;
-    // int task = 4;
-    // RandStackWithWeight RandStack(n_size, task, 2* VectorXi::Ones(task), 2*VectorXi::Ones(task));
+    int n_size = 10;
+    int task = 4;
+    RandStackWithWeight RandStack(n_size, task, 2* VectorXi::Ones(task), 2*VectorXi::Ones(task));
       
-    // A = RandStack.getA();
-    // b = RandStack.getb();
-    // btype = RandStack.getbtype();
-    // W = RandStack.getW();
+    A = RandStack.getA();
+    b = RandStack.getb();
+    btype = RandStack.getbtype();
+    W = RandStack.getW();
 
     Initset Init_active(btype); 
     iHQP_solver iHQP_(A, b, btype,  Init_active.getactiveset(), Init_active.getbounds(), W);
@@ -121,7 +118,13 @@ TEST(TestSuite, testCase1){
     cout << " " << endl;
 
     cout << "HCOD Solution: " << x_opt.transpose() << endl;
-
+    if (evaluation(A, b, btype,  x_opt)){
+        cout << "This Solution is Feasible." << endl;
+    }
+    else{
+        cout << "This Solution is non-Feasible." << endl;
+        assert(false);
+    }
   
    // cout << "Pinv Solution: " << validate_wehqp(A, b, W).transpose() << endl;
     
