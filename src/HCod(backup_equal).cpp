@@ -33,7 +33,8 @@ namespace hcod{
         _isweighted = true;
 
         for (int i=0; i<p_; i++)
-            this->set_h_structure(i);           
+            this->set_h_structure(i);     
+
 
         this->compute_hcod();
     }
@@ -82,11 +83,13 @@ namespace hcod{
             
             hk.Wk = W_[index].array().sqrt();
             hk.Wk = hk.Wk.completeOrthogonalDecomposition().pseudoInverse();
-            hk.AkWk = A_[index] * hk.Wk;
+            hk.AkWk = hk.A * hk.Wk;
+            hk.AkWk = hk.AkWk(hk.active, hk.idx_nh_vec);
 
             hk.Yupj.setIdentity(nh_, nh_);
             hk.Ydownj.setIdentity(nh_, nh_);
             hk.Y.setIdentity(nh_, nh_);
+            hk.rupj = 0;
         }       
 
         h_.push_back(hk);
@@ -94,8 +97,6 @@ namespace hcod{
 
 
     void HCod::compute_hcod(){
-        
-        this->clear_submatrix();
         H_structure hk = h_[0];
 
         if (hk.m > 0){
@@ -103,7 +104,7 @@ namespace hcod{
                 cod_ = new Cod(hk.A_act, EPS);
             }
             else{
-                cod_ = new Cod(hk.AkWk(hk.active, hk.idx_nh_vec), EPS);
+                cod_ = new Cod(hk.AkWk, EPS);
             }
 
             hk.W(hk.iw, hk.im) = cod_->getW();
@@ -153,42 +154,25 @@ namespace hcod{
             }
         }
         else{
+            
             for (int k=1; k<p_; k++){
-                for (int j=0; j<=k-1; j++){                    
-                    h_[k].mj.push_back(h_[j].m);
-                    h_[k].imj.push_back(h_[j].im);
-                    h_[k].iwj.push_back(h_[j].iw);
-                    h_[k].fwj.push_back(h_[j].fw);
-                    h_[k].fmj.push_back(h_[j].fm);
-                    h_[k].nj.push_back(h_[j].n);
-                    h_[k].rj.push_back(h_[j].r);
-                    h_[k].rpj.push_back(h_[j].rp);
-                    h_[k].raj.push_back(h_[j].ra);
-                    h_[k].Aj.push_back(A_[j]*h_[k].Wk);
-
-                    if (h_[j].m > 0){ // check condition
-                        Eigen::MatrixXd AjWk_act = (A_[j] * h_[k].Wk)(h_[j].active, h_[j].idx_nh_vec);
-                        cod_ = new Cod(  AjWk_act  * h_[k].Y.rightCols(nh_-h_[j].rp) , EPS);
-        
-                        h_[k].Wj_c.setIdentity(h_[j].mmax, h_[j].mmax);
-                        h_[k].Wj_c(h_[j].iw, h_[j].im) = cod_->getW();
-                        h_[k].Hj_c.setZero(h_[j].mmax, nh_);
-                        if (j == 0){
-                            h_[k].Hj_c(h_[j].im, h_[j].idx_nh_vec) = cod_->getL();
-                        }
-                        else{
-                            h_[k].Hj_c(h_[j].im, Eigen::VectorXi::LinSpaced(h_[k].H.cols()- h_[j].rp ,h_[j].rp, h_[k].H.cols() - 1)) = cod_->getL();
-                            h_[k].Hj_c(h_[j].im,  Eigen::VectorXi::LinSpaced(h_[j].rp ,0, h_[j].rp- 1)) = cod_->getW().transpose() * AjWk_act * h_[k].Y.leftCols(h_[j].rp) ;
-                        }
+                for (int j=0; j<=k-1; j++){
                     
-                        h_[k].Y.rightCols(h_[k].Y.cols() - h_[j].rp) = h_[k].Y.rightCols(h_[k].Y.cols() - h_[j].rp) * cod_->getQ();
+                    Eigen::MatrixXd AjWk_act = (A_[j] * h_[k].Wk)(h_[j].active, h_[j].idx_nh_vec);
+
+                    cod_ = new Cod(  AjWk_act  * h_[k].Y.rightCols(nh_-h_[j].rp) , EPS);
+                    h_[k].Wj.setIdentity(h_[j].mmax, h_[j].mmax);
+                    h_[k].Wj(h_[j].iw, h_[j].im) = cod_->getW();
+                    h_[k].Hj.setZero(h_[j].mmax, nh_);
+                    if (j == 0){
+                        h_[k].Hj(h_[j].im, h_[j].idx_nh_vec) = cod_->getL();
                     }
                     else{
-                        h_[k].Hj_c.setZero(h_[j].mmax, nh_); // null
-                        h_[k].Wj_c.setZero(h_[j].mmax, h_[j].mmax); // null
+                        h_[k].Hj(h_[j].im, Eigen::VectorXi::LinSpaced(h_[k].H.cols()- h_[j].rp ,h_[j].rp, h_[k].H.cols() - 1)) = cod_->getL();
+                        h_[k].Hj(h_[j].im,  Eigen::VectorXi::LinSpaced(h_[j].rp ,0, h_[j].rp- 1)) = cod_->getW().transpose() * AjWk_act * h_[k].Y.leftCols(h_[j].rp) ;
                     }
-                    h_[k].Hj.push_back(h_[k].Hj_c);
-                    h_[k].Wj.push_back(h_[k].Wj_c);
+                   
+                    h_[k].Y.rightCols(h_[k].Y.cols() - h_[j].rp) = h_[k].Y.rightCols(h_[k].Y.cols() - h_[j].rp) * cod_->getQ();
                 }
 
                 H_structure hk = h_[k];
@@ -199,7 +183,7 @@ namespace hcod{
                     
                     hk.W(hk.iw, hk.im) = cod_->getW();
                     hk.H(hk.im, Eigen::VectorXi::LinSpaced(hk.H.cols()- hk.rp ,hk.rp, hk.H.cols() - 1)) = cod_->getL();
-
+                    
                     hk.r = cod_->getRank();
                     hk.ra = hk.rp + hk.r;
                     hk.n = hk.m-hk.r;
@@ -229,9 +213,7 @@ namespace hcod{
 
         if (_isweighted){
             cout << "Y" << hk.Y << endl;
-            cout << "Hj" << hk.Hj_c << endl;
-            if (index == 2)
-                cout << "Aj" << hk.Aj[1] << endl;
+            cout << "Hj" << hk.Hj << endl;
         }
     }
 }

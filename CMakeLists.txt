@@ -56,6 +56,7 @@ SET(${PROJECT_NAME}_HEADERS
   include/weighted_hqp/eHQP_solver.hpp
   include/weighted_hqp/iHQP_solver.hpp
   include/weighted_hqp/step_length.hpp
+  include/weighted_hqp/Up.hpp
   )
 
 SET(${PROJECT_NAME}_SOURCES
@@ -68,6 +69,7 @@ SET(${PROJECT_NAME}_SOURCES
   src/eHQP_solver.cpp
   src/iHQP_solver.cpp
   src/step_length.cpp
+  src/Up.cpp
   )
 
 include_directories(3rdparty/Eigen3)
@@ -90,7 +92,9 @@ add_executable(ihqp_test unitTesting/ihqp_test.cpp)
 add_executable(ehqp_test unitTesting/ehqp_test.cpp)
 add_executable(ihqp_vs_qpoases unitTesting/ihqp_vs_qpoases.cpp)
 add_executable(wehqp_test unitTesting/wehqp_test.cpp)
+add_executable(wihqp_test unitTesting/wihqp_test.cpp)
 target_link_libraries(ihqp_test ${PROJECT_NAME} ${GTEST_LIBRARIES} ${catkin_LIBRARIES} ${kimm_qpoases_LIBRARIES} pthread)
 target_link_libraries(ehqp_test ${PROJECT_NAME} ${GTEST_LIBRARIES} ${catkin_LIBRARIES} ${kimm_qpoases_LIBRARIES} pthread)
 target_link_libraries(ihqp_vs_qpoases ${PROJECT_NAME} ${GTEST_LIBRARIES} ${catkin_LIBRARIES} ${kimm_qpoases_LIBRARIES} pthread)
 target_link_libraries(wehqp_test ${PROJECT_NAME} ${GTEST_LIBRARIES} ${catkin_LIBRARIES} ${kimm_qpoases_LIBRARIES} pthread)
+target_link_libraries(wihqp_test ${PROJECT_NAME} ${GTEST_LIBRARIES} ${catkin_LIBRARIES} ${kimm_qpoases_LIBRARIES} pthread)

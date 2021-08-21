@@ -27,7 +27,7 @@ namespace hcod{
         Eigen::VectorXi fw;
         Eigen::VectorXi fm;
 
-        Eigen::VectorXi active, activeb;
+        Eigen::VectorXi active, activeb, idx_nh_vec;
         Eigen::VectorXi bound;
 
         Eigen::MatrixXd A_act;
@@ -37,15 +37,15 @@ namespace hcod{
         Eigen::MatrixXd AkWk;
         Eigen::VectorXd sol;
 
-        Eigen::MatrixXd Wj;
         Eigen::MatrixXd Lj;
-        Eigen::MatrixXd Hj;
-        Eigen::MatrixXd Aj;
-
         Eigen::MatrixXd Y, Yupj, Ydownj;
+        Eigen::MatrixXd Hj_c, Wj_c;
 
-        int mj, nj, rj, rpj, raj, rupj;
-        Eigen::VectorXi iwj, imj, fwj, fmj, idx_nh_vec;
+        std::vector<int> mj, nj, rj, rpj, raj;
+        std::vector<Eigen::VectorXi> iwj, imj, fwj, fmj;
+        std::vector<Eigen::MatrixXd> Aj, Wj, Hj;
+        int rupj;
+
     } h_structure;   
 
     class HCod{
@@ -57,6 +57,22 @@ namespace hcod{
         private: 
             void set_h_structure(const unsigned int & index);
             void compute_hcod();
+            void clear_submatrix(){
+                for (int i=0; i<p_; i++){
+                    h_[i].mj.clear();
+                    h_[i].imj.clear();
+                    h_[i].iwj.clear();
+                    h_[i].fwj.clear();
+                    h_[i].fmj.clear();
+                    h_[i].nj.clear();
+                    h_[i].rj.clear();
+                    h_[i].rpj.clear();
+                    h_[i].raj.clear();
+                    h_[i].Aj.clear();
+                    h_[i].Hj.clear();
+                    h_[i].Wj.clear();
+                }
+            }
 
         public:
             void print_h_structure(const unsigned int & index);

@@ -3,6 +3,7 @@
 #include <Eigen/QR>
 using namespace std;
 
+#define DEBUG_QP
 namespace hcod{
     Ehqp_primal::Ehqp_primal(const std::vector<h_structure> &h, const Eigen::MatrixXd & Y)
     : h_(h), Y_(Y){
@@ -49,6 +50,14 @@ namespace hcod{
                         M1_ = hk.H(im1_idx, Eigen::VectorXi::LinSpaced(hk.rp, 0, hk.rp-1));
                     W1_ = hk.W(hk.iw, im1_idx);
                     b_ = hk.b(hk.activeb, 0); //shuld be check 0
+
+// #ifdef DEBUG_QP
+//     cout << "hk.H " << hk.H << endl; 
+//     cout << "M1 " << M1_ << endl;
+//     cout << "W1 " << W1_ << endl;
+//     cout << "b_ " << b_.transpose() << endl;
+//     getchar();
+// #endif
                     if (i > 0){
                         e_ = W1_.transpose() * b_ - W1_.transpose() * hk.A(hk.active, Eigen::VectorXi::LinSpaced(hk.A.cols(), 0, hk.A.cols()-1)) * hj.sol;
                         // cout << "b_" << b_.transpose() << endl; 
@@ -65,9 +74,9 @@ namespace hcod{
                 }
 
                 if (i == 0)
-                    hk.sol = hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra) * y_.segment(hk.rp, hk.ra-hk.rp);
+                    hk.sol = hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
                 else
-                    hk.sol = hj.sol + hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra) * y_.segment(hk.rp, hk.ra-hk.rp);
+                    hk.sol = hj.sol + hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
                 // cout << "sol" << hk.sol.transpose() << endl;
                 // getchar();
                 h_[i] = hk;
