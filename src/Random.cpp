@@ -78,8 +78,9 @@ namespace hcod{
                 Au_.block(m_.head(i).sum(), 0, mk, nh_) = Wk * Ak;
             }
             Eigen::MatrixXd W_tmp(nh_, nh_);
+            int dof = std::floor(nh_/p_);
             W_tmp.setIdentity();
-            W_tmp.block(i*3, i*3, 3, 3) = Eigen::Matrix3d::Identity() * 0.001;
+            W_tmp.block(i*dof, i*dof, dof, dof) = Eigen::MatrixXd::Identity(dof, dof) * 0.001;
             W_.push_back(W_tmp);
         }
       

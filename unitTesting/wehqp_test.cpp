@@ -60,36 +60,46 @@ TEST(TestSuite, testCase1){
     vector<VectorXi> btype;   
     vector<MatrixXd> W;
 
-    // MatrixXd A1(2, 6), A2(2, 6);
-    // MatrixXd b1(2, 1), b2(2, 1);
-    // VectorXi btype1(2), btype2(2);
-    // MatrixXd W1(6, 6), W2(6, 6);
-    // A1.row(0) << 0.366742341559392,	-0.302725472735441,	0.277662737567718	,-0.0755104628570935,	-0.274669578152753,	-0.106172347191282;
-    // A1.row(1) << 0.278455370616141,	0.597115687251413,	0.0109921178447200,	-0.177534354758469,	0.432419712041074,	0.131616734450673;
-    // A2.row(0) << -0.00819021186435769	,-0.255920350099915,0.224534719875352	,0.180124980559449,	0.696149211075684,	-0.618139862183112;
-    // A2.row(1) << 0.845901714143818,	0.327997808330170,	1.25215384180023,	0.303913326816249,	0.288298334312046,	-0.388675901304074;
-    // b1.row(0) << 0.922331997796276;
-    // b1.row(1) << 0.770954220673925;
-    // b2.row(0) <<  0.623716412667443;
-    // b2.row(1) << 0.236444932640910;
-    // btype1 << 1, 1;
-    // btype2 << 1, 1;
-    // W1.setIdentity();
-    // W2.setIdentity();
-    // W1.topLeftCorner(3,3) *= 0.001;
-    // W2.bottomRightCorner(3,3) *= 0.001;
+    MatrixXd A1(1, 4), A2(1, 4), A3(1, 4);
+    MatrixXd b1(1, 1), b2(1, 1), b3(1, 1);
+    VectorXi btype1(1), btype2(1), btype3(1);
+    MatrixXd W1(4, 4), W2(4, 4), W3(4, 4);
 
-    // A.push_back(A1);
-    // A.push_back(A2);
-    // b.push_back(b1);
-    // b.push_back(b2);
-    // btype.push_back(btype1);
-    // btype.push_back(btype2);
-    // W.push_back(W1);
-    // W.push_back(W2);
+    A1.row(0) <<-0.7907, 0.2047, 0.4647, 0.4733;
+    A2.row(0) <<-0.0103, 0.6034, -0.2287, 0.7969;
+    A3.row(0) <<-0.1424, 1.1300, 0.9909, 0.2378;
 
-    int n_size = 10;
-    RandStackWithWeight RandStack(n_size, 3, Vector3i(2, 2, 2), Vector3i(2, 2, 2));
+    b1.row(0) << 0.9081;
+    b2.row(0) << 0.8051;
+    b3.row(0) << 0.5323;
+
+    btype1 <<1;
+    btype2 <<1;
+    btype3 <<1;
+
+    W1.setIdentity();
+    W2.setIdentity();
+    W3.setIdentity();    
+    W1(0, 0) = 0.001;
+    W2(1, 1) = 0.001;
+    W3(2, 2) = 0.001;
+
+    A.push_back(A1);
+    A.push_back(A2);
+    A.push_back(A3);
+    b.push_back(b1);
+    b.push_back(b2);
+    b.push_back(b3);
+    btype.push_back(btype1);
+    btype.push_back(btype2);
+    btype.push_back(btype3);
+    W.push_back(W1);
+    W.push_back(W2);
+    W.push_back(W3);
+
+    int n_size = 20;
+    int task = 5;
+    RandStackWithWeight RandStack(n_size, task, 2* VectorXi::Ones(task), 2*VectorXi::Ones(task));
       
     A = RandStack.getA();
     b = RandStack.getb();

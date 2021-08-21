@@ -27,6 +27,7 @@ namespace hcod{
             hcod_ = new HCod(A_, b_, btype_, aset_init_, aset_bound_, W_);
             // hcod_->print_h_structure(0);
             // hcod_->print_h_structure(1);
+            // hcod_->print_h_structure(2);
             // getchar();
             ehpq_primal_ = new Ehqp_primal(hcod_->geth());
         }
