@@ -10,6 +10,7 @@ namespace hcod{
     : A_(A), THR_(THR)
     {   
         W_.setIdentity(A_.rows(), A_.rows());
+        W_permute_.setIdentity(A_.rows(), A_.rows());
         givens_t = new Givens();
         this->computation();
         
@@ -32,16 +33,20 @@ namespace hcod{
                     L_ = U * L_; 
                     W_ = W_ * U.transpose();
                 }
+
+        //std::cout << "W_ \n" << W_ << endl;
+
         
         L_permute_ = L_;
         
         if (rankA_ < A_.rows()){
-            L_permute_.topRows(L_.rows()- rankA_) = L_.bottomRows(rankA_);
-            L_permute_.bottomRows(rankA_) = L_.topRows(L_.rows() - rankA_); // check
-            W_permute_.topRows(W_.rows()- rankA_) = W_.bottomRows(rankA_);
-            W_permute_.bottomRows(rankA_) = W_.topRows(W_.rows() - rankA_); // check
+            L_permute_.topRows(L_.rows()- rankA_) = L_.bottomRows(L_.rows()- rankA_);
+            L_permute_.bottomRows(rankA_) = L_.topRows(rankA_); // check
+            W_permute_.leftCols(W_.rows()- rankA_) = W_.rightCols(W_.rows()- rankA_);
+            W_permute_.rightCols(rankA_) = W_.leftCols(rankA_); // check
         }
-        W_permute_ = E_ * W_;     
+
+        W_permute_ = E_ * W_permute_;     
     }
     void Cod::calc_decomposition(){
         //Eigen::CompleteOrthogonalDecomposition<Eigen::MatrixXd> qr(A_); // check

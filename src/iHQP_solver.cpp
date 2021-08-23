@@ -10,21 +10,13 @@ namespace hcod{
     iHQP_solver::iHQP_solver(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound)
     : A_(A), b_(b), btype_(btype), aset_init_(aset_init), aset_bound_(aset_bound)
     {
-        iter_ = 0;
-        kcheck_ = 0;
-        p_ = A_.size();
         _isweighted = false;        
-
         this->set_problem();
     }
     iHQP_solver::iHQP_solver(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound, const std::vector<Eigen::MatrixXd> &W)
     : A_(A), b_(b), btype_(btype), aset_init_(aset_init), aset_bound_(aset_bound), W_(W)
     {
-        iter_ = 0;
-        kcheck_ = 0;
-        p_ = A_.size();
         _isweighted = true;
-
         this->set_problem();
     //         hcod_->print_h_structure(0);
     // hcod_->print_h_structure(1);
@@ -34,6 +26,10 @@ namespace hcod{
     }
     
     void iHQP_solver::set_problem(){
+        iter_ = 0;
+        kcheck_ = 0;
+        p_ = A_.size();
+
         if (!_isweighted){
             hcod_ = new HCod(A_, b_, btype_, aset_init_, aset_bound_);
             Y_ = hcod_->getY();
@@ -78,6 +74,7 @@ namespace hcod{
                 y1_ = ehpq_primal_->gety();
 
 #ifdef DEBUG
+cout << "x0_ " <<  x0_.transpose() << endl;
 cout << "x1_ " <<  x1_.transpose() << endl;
 #endif
             step_length_->setProblem(x0_, x1_, h_, Y_);
@@ -101,7 +98,8 @@ cout << "bound " <<  bound << endl;
                 up_->compute(kup, cup, bound, h_, Y_, _isweighted);
                 if (!_isweighted)
                     Y_ = up_->getY();
-                h_ = up_->geth();                
+                h_ = up_->geth();
+          
             } 
             else{
                 x0_ = x1_;

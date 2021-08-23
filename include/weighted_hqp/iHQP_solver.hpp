@@ -14,12 +14,34 @@ namespace hcod{
         public:
             iHQP_solver(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound);
             iHQP_solver(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound, const std::vector<Eigen::MatrixXd> &W);
+            iHQP_solver(){};
             ~iHQP_solver(){};
         
         private: 
             void set_problem();
 
         public:
+            void initialized(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound, const std::vector<Eigen::MatrixXd> &W){
+                A_ = A;
+                b_ = b;
+                btype_ = btype;
+                aset_init_ = aset_init;
+                aset_bound_ = aset_bound;
+                W_ = W;
+                _isweighted = true;
+                this -> set_problem(); 
+            }
+            void initialized(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound){
+                A_ = A;
+                b_ = b;
+                btype_ = btype;
+                aset_init_ = aset_init;
+                aset_bound_ = aset_bound;
+                _isweighted = false;
+                this -> set_problem(); 
+            }
+           
+           
             Eigen::VectorXd solve();
             std::vector<H_structure> geth(){
                 return h_;

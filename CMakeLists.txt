@@ -8,7 +8,7 @@ SET(PROJECT_URL "http://github.com/ggory15/weighted_hqp")
 SET(CXX_DISABLE_WERROR True)
 SET(CMAKE_VERBOSE_MAKEFILE true)
 SET(CMAKE_BUILD_TYPE "Release")
-# add_compile_options(-std=c++17 -O3)
+#add_compile_options(-std=c++17 -O3)
 
 #INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/boost.cmake)

@@ -120,18 +120,6 @@ TEST(TestSuite, testCase1){
     cout << "HCOD Solution: " << x_opt.transpose() << endl;
 
     cout << "Pinv Solution: " << validate_wehqp(A, b, W).transpose() << endl;
-    
-    // MatrixXd J1 = RandStack.getA()[0];
-    // MatrixXd J2 = RandStack.getA()[1];
-    // MatrixXd x1 = RandStack.getb()[0];
-    // MatrixXd x2 = RandStack.getb()[1];
-    // MatrixXd J1_inv = J1.completeOrthogonalDecomposition().pseudoInverse();
-    // MatrixXd N1 = MatrixXd::Identity(n_size, n_size) - J1_inv * J1;
-    // MatrixXd q1_star = J1_inv* x1;
-    // MatrixXd J2_inv = (J2 * N1).completeOrthogonalDecomposition().pseudoInverse();
-    // MatrixXd q2_star = J2_inv * (x2 - J2 * q1_star);
-
-    // cout << "Pinv Solution: " << (q1_star + q2_star).transpose() << endl;
 }
 
 	

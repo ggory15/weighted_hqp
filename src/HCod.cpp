@@ -107,6 +107,11 @@ namespace hcod{
             }
 
             hk.W(hk.iw, hk.im) = cod_->getW();
+
+            //std::cout << "hk.im  " <<  hk.im << std::endl;
+            //std::cout << "hk.idx_nh_vec" << hk.idx_nh_vec << std::endl;
+            //std::cout << "cod_->getL()\n" << cod_->getL() << std::endl;
+
             hk.H(hk.im, hk.idx_nh_vec) = cod_->getL();
 
             if (!_isweighted)
@@ -182,10 +187,11 @@ namespace hcod{
                         }
                     
                         h_[k].Y.rightCols(h_[k].Y.cols() - h_[j].rp) = h_[k].Y.rightCols(h_[k].Y.cols() - h_[j].rp) * cod_->getQ();
+                    
                     }
                     else{
-                        h_[k].Hj_c.setZero(h_[j].mmax, nh_); // null
-                        h_[k].Wj_c.setZero(h_[j].mmax, h_[j].mmax); // null
+                        h_[k].Hj_c.setZero(0, nh_); // null
+                        h_[k].Wj_c.setZero(0, 0); // null
                     }
                     h_[k].Hj.push_back(h_[k].Hj_c);
                     h_[k].Wj.push_back(h_[k].Wj_c);
@@ -196,7 +202,7 @@ namespace hcod{
 
                 if (hk.m>0){                    
                     cod_ = new Cod(hk.AkWk(hk.active, hk.idx_nh_vec) * hk.Y.rightCols(nh_-hk.rp) , EPS); // check 
-                    
+
                     hk.W(hk.iw, hk.im) = cod_->getW();
                     hk.H(hk.im, Eigen::VectorXi::LinSpaced(hk.H.cols()- hk.rp ,hk.rp, hk.H.cols() - 1)) = cod_->getL();
 
