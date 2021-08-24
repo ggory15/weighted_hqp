@@ -2,7 +2,7 @@
 
 #include <assert.h>
 #include <numeric>
-//#define DEBUG
+#define DEBUG
 
 using namespace std;
 
@@ -36,7 +36,7 @@ namespace hcod{
             h_ = hcod_->geth();
             nh_ =Y_.rows();
 
-            x0_.resize(nh_);
+            x0_.setZero(nh_);
             ehpq_primal_ = new Ehqp_primal(h_, Y_);
             step_length_ = new Step_length();
             up_ = new Up();
@@ -45,7 +45,7 @@ namespace hcod{
             hcod_ = new HCod(A_, b_, btype_, aset_init_, aset_bound_, W_);
             h_ = hcod_->geth();     
             nh_ = h_[0].A.cols();       
-            x0_.resize(nh_);
+            x0_.setZero(nh_);
             ehpq_primal_ = new Ehqp_primal(h_);
             step_length_ = new Step_length();
             up_ = new Up();

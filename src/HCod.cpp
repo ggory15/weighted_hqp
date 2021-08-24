@@ -81,7 +81,8 @@ namespace hcod{
         else{
             
             hk.Wk = W_[index].array().sqrt();
-            hk.Wk = hk.Wk.completeOrthogonalDecomposition().pseudoInverse();
+            Eigen::MatrixXd Wk = hk.Wk.completeOrthogonalDecomposition().pseudoInverse();
+            hk.Wk = Wk;
             hk.AkWk = A_[index] * hk.Wk;
 
             hk.Yupj.setIdentity(nh_, nh_);
@@ -107,11 +108,6 @@ namespace hcod{
             }
 
             hk.W(hk.iw, hk.im) = cod_->getW();
-
-            //std::cout << "hk.im  " <<  hk.im << std::endl;
-            //std::cout << "hk.idx_nh_vec" << hk.idx_nh_vec << std::endl;
-            //std::cout << "cod_->getL()\n" << cod_->getL() << std::endl;
-
             hk.H(hk.im, hk.idx_nh_vec) = cod_->getL();
 
             if (!_isweighted)
@@ -211,7 +207,8 @@ namespace hcod{
                     hk.n = hk.m-hk.r;
 
                     hk.H(hk.im, Eigen::VectorXi::LinSpaced(hk.rp ,0, hk.rp- 1)) = cod_->getW().transpose() * hk.AkWk(hk.active, hk.idx_nh_vec) * hk.Y.leftCols(hk.rp);
-                    hk.Y.rightCols(hk.Y.cols() - hk.rp) = hk.Y.rightCols(hk.Y.cols() - hk.rp) * cod_->getQ();
+                    Eigen::MatrixXd Y_tmp = hk.Y.rightCols(hk.Y.cols() - hk.rp);
+                    hk.Y.rightCols(hk.Y.cols() - hk.rp) =  Y_tmp * cod_->getQ();
                 }
                 else{
                     hk.ra =hk.rp;
