@@ -120,7 +120,7 @@ int main(int argc, char **argv){
     W.push_back(W1);
 
     Initset Init_active(btype); 
-    iHQP_solver iHQP_(A, b, btype,  Init_active.getactiveset(), Init_active.getbounds());
+    iHQP_solver iHQP_(A, b, btype,  Init_active.getactiveset(), Init_active.getbounds(), W);
 
     auto t1 = high_resolution_clock::now();
     Eigen::VectorXd x_opt = iHQP_.solve();

@@ -226,7 +226,7 @@ cout << "h_[1].H(  " << h_[1].H  << endl;
                 else{
                     int rdef = rup -  h_[k].rp;
                     for (int i = rdef; i>=2; i--){
-                        given_->compute_rotation(h_[k].H.col(h_[k].rp + i)(h_[k].im), h_[k].n + i, h_[k].n + rdef);
+                        given_->compute_rotation(h_[k].H.col(h_[k].rp + i - 1)(h_[k].im), h_[k].n + i -1, h_[k].n + rdef -1);
                         Wi_ = given_->getR().transpose();
                         Eigen::VectorXi idx_H_col_vec = Eigen::VectorXi::LinSpaced(h_[k].H.cols() ,0, h_[k].H.cols()-1);
                         Eigen::MatrixXd H_prev = h_[k].H(h_[k].im, idx_H_col_vec);

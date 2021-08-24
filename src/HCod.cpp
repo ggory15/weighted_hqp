@@ -195,7 +195,7 @@ namespace hcod{
                     h_[k].Wj.push_back(h_[k].Wj_c);
                 }
 
-                H_structure hk = h_[k];
+                hk = h_[k];
                 hk.rp = h_[k-1].ra;
 
                 if (hk.m>0){                    
