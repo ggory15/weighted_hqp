@@ -79,7 +79,7 @@ namespace hcod{
              hk.A_act =  hk.A(hk.active, hk.idx_nh_vec);
         }
         else{
-            
+            hk.sol.setZero(nh_);
             hk.Wk = W_[index].array().sqrt();
             Eigen::MatrixXd Wk = hk.Wk.completeOrthogonalDecomposition().pseudoInverse();
             hk.Wk = Wk;
