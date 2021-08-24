@@ -3,7 +3,7 @@
 #include <Eigen/QR>
 using namespace std;
 
-#define DEBUG_QP
+//#define DEBUG_QP
 namespace hcod{
     Ehqp_primal::Ehqp_primal(const std::vector<h_structure> &h, const Eigen::MatrixXd & Y)
     : h_(h), Y_(Y){

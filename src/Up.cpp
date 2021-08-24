@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define DEBUG
+//#define DEBUG
 namespace hcod{
     bool Up::compute(const int kup, const int cup, const int bound, const std::vector<h_structure> & h, const Eigen::MatrixXd & Y, const bool & isweighted){
         Y_ = Y;
@@ -92,7 +92,7 @@ cout << "Hj " << h_[kup+1].Hj[kup] <<endl;
 #ifdef DEBUG
 cout << "dd" <<std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; })) << endl;
 cout << "rup " <<  rup << "  " <<csum.transpose() << endl;
-cout << "h_[kup].ra" << h_[kup].ra << endl;
+cout << "h_[kup].ra " << h_[kup].ra << endl;
 #endif
         if (rup <= h_[kup].ra){
             if (rup > h_[kup].rp){
@@ -115,49 +115,50 @@ cout << "Wi_ " <<  Wi_ << endl;
 #endif
                 }                        
             }
-            
             h_[kup].im(0) = im_tmp(h_[kup].im.size() - 1);
             for (int i=1; i<h_[kup].im.size(); i++)
                 h_[kup].im(i) = im_tmp(i-1);
             h_[kup].n += 1;          
+            
             if (!_isweighted)     
                 return true;     
         }
-    
-        for (int j = kup +1; j<p_; j++){
-            flip_vec = h_[j].Hj[kup].row(idx_im).array().square();
-            flip_vec_rev = flip_vec.reverse();
-            csum = flip_vec_rev;
+        
+        if (_isweighted){
+            for (int j = kup +1; j<p_; j++){
+                flip_vec = h_[j].Hj[kup].row(idx_im).array().square();
+                flip_vec_rev = flip_vec.reverse();
+                csum = flip_vec_rev;
 
-            std::partial_sum(flip_vec_rev.begin(), flip_vec_rev.end(), csum.begin(), std::plus<double>());
-            h_[j].rupj = nh_ - std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; }));
-            
-            if (h_[j].rupj <= h_[kup].ra){
-                if (h_[j].rupj > h_[kup].rp){
-                    for (int i=h_[j].rupj -h_[kup].rp; i>=0; i--){
-                        given_->compute_rotation(h_[j].Hj[kup].col(h_[kup].rp + i)(h_[kup].im), h_[kup].n + i, h_[kup].m);
-                        Wi_ = given_->getR().transpose();
-                        h_[j].Hj[kup](h_[kup].im, idx_H_col_vec) = Wi_ * h_[kup].H(h_[kup].im, idx_H_col_vec);
-                        h_[j].Wj[kup](h_[kup].iw, h_[kup].im) =  h_[kup].W(h_[kup].iw, h_[kup].im) * Wi_.transpose();
+                std::partial_sum(flip_vec_rev.begin(), flip_vec_rev.end(), csum.begin(), std::plus<double>());
+                h_[j].rupj = nh_ - std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; }));
+                
+                if (h_[j].rupj <= h_[kup].ra){
+                    if (h_[j].rupj > h_[kup].rp){
+                        for (int i=h_[j].rupj -h_[kup].rp; i>=0; i--){
+                            given_->compute_rotation(h_[j].Hj[kup].col(h_[kup].rp + i)(h_[kup].im), h_[kup].n + i, h_[kup].m);
+                            Wi_ = given_->getR().transpose();
+                            h_[j].Hj[kup](h_[kup].im, idx_H_col_vec) = Wi_ * h_[kup].H(h_[kup].im, idx_H_col_vec);
+                            h_[j].Wj[kup](h_[kup].iw, h_[kup].im) =  h_[kup].W(h_[kup].iw, h_[kup].im) * Wi_.transpose();
+                        }
                     }
-                }
-                h_[j].imj[kup](0) = im_tmp(h_[kup].im.size() - 1);
-                for (int i=1; i<h_[kup].im.size(); i++)
-                    h_[j].imj[kup](i) = im_tmp(i-1);
-                h_[j].nj[kup] = h_[kup].n + 1;        
+                    h_[j].imj[kup](0) = im_tmp(h_[kup].im.size() - 1);
+                    for (int i=1; i<h_[kup].im.size(); i++)
+                        h_[j].imj[kup](i) = im_tmp(i-1);
+                    h_[j].nj[kup] = h_[kup].n + 1;        
 
-                if (j == p_-1){
-                    return true;
-                }  
+                    if (j == p_-1){
+                        return true;
+                    }  
 #ifdef DEBUG
 cout << "h_[j].Hj[kup] " <<  h_[j].Hj[kup] << endl;
 cout << " h_[j].Wj[kup] " <<   h_[j].Wj[kup] << endl;
 cout << "h_[j].imj[kup] " <<  h_[j].imj[kup] << endl;
 cout << "h_[j].nj[kup] " <<  h_[j].nj[kup] << endl;
 #endif
+                }
             }
         }
-
 
         Yup_.setIdentity(nh_, nh_);
         for (int i=rup-2; i>= h_[kup].ra; i--){ // check
@@ -172,7 +173,9 @@ cout << "original " << h_[kup].H.row(h_[kup].im(h_[kup].im.size() -1)) << endl;
             Yup_ = Yup_ * Yi_;
 
         }
-
+#ifdef DEBUG
+cout << "Yup_ " <<Yup_ << endl;
+#endif
         if (_isweighted)
         {
             h_[kup].Y = h_[kup].Y * Yup_;
@@ -239,15 +242,18 @@ cout << "h_[k].W(h_[k].iw, h_[k].im)  " << h_[k].W(h_[k].iw, h_[k].im)  << endl;
                     h_[k].rp += 1;
                     h_[k].r -= 1;
                     
-                    h_[k].im.resize(-1 + h_[k].m);
-                    h_[k].im(0) = h_[k].n + rdef;
+                    h_[k].im.resize(h_[k].m);
+                    Eigen::VectorXi im_tmp = h_[k].im;
+                    h_[k].im(0) = im_tmp(h_[k].n + rdef -1);
                     for (int i =0 ; i<h_[k].n; i++)
-                        h_[k].im(i) = i;
+                        h_[k].im(i+1) =  im_tmp(i);
                     for (int i =h_[kup].n; i<h_[k].n + rdef - 1; i++)
-                        h_[k].im(i) = i;
+                        h_[k].im(i) =  im_tmp(i);
                     for (int i =h_[k].n + rdef; i<h_[k].m; i++)
-                        h_[k].im(i) = i;
-                    h_[k].n += 1;                            
+                        h_[k].im(i) = im_tmp(i);
+                    h_[k].n += 1;         
+
+                                    
                 }
 #ifdef DEBUG
 cout << "H_  " << h_[k].H  << endl;

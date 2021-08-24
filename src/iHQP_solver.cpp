@@ -2,7 +2,7 @@
 
 #include <assert.h>
 #include <numeric>
-#define DEBUG
+//#define DEBUG
 
 using namespace std;
 
