@@ -61,7 +61,7 @@ int main(int argc, char **argv){
     A.push_back(Eigen::MatrixXd::Identity(3, 6));
     A.push_back(Eigen::MatrixXd::Identity(3, 6));
     Eigen::MatrixXd b_tmp(3, 2);
-    b_tmp.col(0) << -1, -1, -1;
+    b_tmp.col(0) << -2, -4, -1;
     b_tmp.col(1) << 1, 1, 1;
     b.push_back(b_tmp);
     b_tmp.col(0) << -3, -3, -3;

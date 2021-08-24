@@ -86,7 +86,7 @@ cout << "Hj " << h_[kup+1].Hj[kup] <<endl;
         Eigen::VectorXd flip_vec_rev = flip_vec.reverse();
         Eigen::VectorXd csum = flip_vec_rev;
         std::partial_sum(flip_vec_rev.begin(), flip_vec_rev.end(), csum.begin(), std::plus<double>());
-        int rup = nh_ - std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; })) + 1;
+        int rup = nh_ - std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; })) ;
         Eigen::VectorXi idx_H_col_vec = Eigen::VectorXi::LinSpaced(h_[kup].H.cols() ,0, h_[kup].H.cols()-1);
         Eigen::VectorXi im_tmp = h_[kup].im;
 #ifdef DEBUG
@@ -130,7 +130,7 @@ cout << "Wi_ " <<  Wi_ << endl;
             csum = flip_vec_rev;
 
             std::partial_sum(flip_vec_rev.begin(), flip_vec_rev.end(), csum.begin(), std::plus<double>());
-            h_[j].rupj = nh_ - std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; })) + 1;
+            h_[j].rupj = nh_ - std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; }));
             
             if (h_[j].rupj <= h_[kup].ra){
                 if (h_[j].rupj > h_[kup].rp){
