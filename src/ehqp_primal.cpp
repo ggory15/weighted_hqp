@@ -72,6 +72,12 @@ namespace hcod{
                     y_.segment(hk.rp, hk.ra-hk.rp) = L_.completeOrthogonalDecomposition().pseudoInverse() * e_;
                     // cout << "L" << L_ << endl;
                     // cout << "y" << y_.transpose() << endl; 
+#ifdef DEBUG_QP
+cout << "im1_idx " << im1_idx.transpose() << "   " << hk.im.transpose() << endl;
+cout << "y_ " << y_.transpose() << endl;
+cout << "x_e" << e_.transpose() << endl;
+cout << "L" << L_ << endl;
+#endif DEBUG_QP
                 }
 
                 if (i == 0)

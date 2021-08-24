@@ -296,13 +296,12 @@ cout << "h_[k].H  " << h_[k].H  << endl;
 
                 }
                 else if (h_[k].rupj +1 > h_[k].ra) {
-
                     h_[k].rp += 1;
                     h_[k].ra += 1;
 
-                    for (int i=0; i<p_; i++){
-                        h_[k].rpj[k] = h_[k].rp;
-                        h_[k].raj[k] = h_[k].ra;
+                    for (int i=k+1; i<p_; i++){
+                        h_[i].rpj[k] = h_[k].rp;
+                        h_[i].raj[k] = h_[k].ra;
                     }
                 }
                 else{
@@ -321,22 +320,28 @@ cout << "h_[k].H  " << h_[k].H  << endl;
                     h_[k].rp += 1;
                     h_[k].r -= 1;
                     
+                    
                     h_[k].im.resize(h_[k].m);
+    
                     Eigen::VectorXi im_tmp = h_[k].im;
-                    h_[k].im(0) = im_tmp(h_[k].n + rdef);
-                    for (int i =0 ; i<=h_[k].n; i++)
+                    h_[k].im(0) = im_tmp(h_[k].n + rdef - 1);
+                    for (int i =0 ; i<h_[k].n; i++)
                         h_[k].im(i+1) = im_tmp(i);
                     for (int i =h_[kup].n; i<h_[k].n + rdef - 1; i++)
                         h_[k].im(i+h_[k].n + 2) = im_tmp(i);
-                    for (int i =h_[k].n + rdef + 1; i<h_[k].m; i++)
-                        h_[k].im(i+h_[k].n + 2 + rdef) = im_tmp(i);
-
+                    for (int i =h_[k].n + rdef; i<h_[k].m; i++) {
+                        h_[k].im(i) = im_tmp(i);
+                    }
 
                     for (int i=k+1; i<p_; i++){
                         h_[i].rpj[k] = h_[k].rp;
                         h_[i].rj[k] = h_[k].r;
                         h_[i].nj[k] = h_[k].n;
                     }   
+                    // cout << "h_[k].n  " << h_[k].n  << endl;
+                    // cout << "hk im" << h_[k].im.transpose() << endl;
+                    h_[k].n += 1;
+                    // getchar();
              
                 }
                 Eigen::MatrixXd Y_prev = h_[k].Y;
@@ -355,7 +360,6 @@ cout << "  " << endl;
 cout << "  " << endl;
 cout << "  " << endl;
 
-getchar();
 #endif                
         }
 
