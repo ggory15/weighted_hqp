@@ -244,12 +244,12 @@ cout << "h_[k].W(h_[k].iw, h_[k].im)  " << h_[k].W(h_[k].iw, h_[k].im)  << endl;
                     
                     h_[k].im.resize(h_[k].m);
                     Eigen::VectorXi im_tmp = h_[k].im;
-                    h_[k].im(0) = im_tmp(h_[k].n + rdef -1);
+                    h_[k].im(0) = im_tmp(h_[k].n + rdef - 1);
                     for (int i =0 ; i<h_[k].n; i++)
-                        h_[k].im(i+1) =  im_tmp(i);
+                        h_[k].im(i+1) = im_tmp(i);
                     for (int i =h_[kup].n; i<h_[k].n + rdef - 1; i++)
-                        h_[k].im(i) =  im_tmp(i);
-                    for (int i =h_[k].n + rdef; i<h_[k].m; i++)
+                        h_[k].im(i+1) = im_tmp(i);
+                    for (int i =h_[k].n + rdef; i<h_[k].m; i++) 
                         h_[k].im(i) = im_tmp(i);
                     h_[k].n += 1;         
 
@@ -334,7 +334,7 @@ cout << "h_[k].H  " << h_[k].H  << endl;
                     for (int i =0 ; i<h_[k].n; i++)
                         h_[k].im(i+1) = im_tmp(i);
                     for (int i =h_[kup].n; i<h_[k].n + rdef - 1; i++)
-                        h_[k].im(i+h_[k].n + 2) = im_tmp(i);
+                        h_[k].im(i+1) = im_tmp(i);
                     for (int i =h_[k].n + rdef; i<h_[k].m; i++) {
                         h_[k].im(i) = im_tmp(i);
                     }

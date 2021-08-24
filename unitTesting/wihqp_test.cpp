@@ -82,13 +82,14 @@ int main(int argc, char **argv){
     A.push_back(Eigen::MatrixXd::Identity(7, 7));
     Eigen::MatrixXd b_tmp(7, 2);
     b_tmp.col(0).setOnes();
-    b_tmp.col(0) = b_tmp.col(0) * -1.0;
+    b_tmp.col(0) = b_tmp.col(0) * -0.1;
     b_tmp.col(1).setOnes();
+    b_tmp.col(1) = b_tmp.col(1) * 0.1;
     b.push_back(b_tmp);
     b_tmp.col(0).setOnes();
     b_tmp.col(1).setOnes();
-    b_tmp.col(0) = b_tmp.col(0) * -80.0;
-    b_tmp.col(1) = b_tmp.col(1) * 80.0;
+    b_tmp.col(0) = b_tmp.col(0) * 1.49972;
+    b_tmp.col(1) = b_tmp.col(1) * 1.49972;
     b.push_back(b_tmp);
     
     Eigen::VectorXi type_tmp(7);
@@ -104,7 +105,7 @@ int main(int argc, char **argv){
 
 
     Initset Init_active(btype); 
-    iHQP_solver iHQP_(A, b, btype,  Init_active.getactiveset(), Init_active.getbounds());
+    iHQP_solver iHQP_(A, b, btype,  Init_active.getactiveset(), Init_active.getbounds(), W);
 
     auto t1 = high_resolution_clock::now();
     Eigen::VectorXd x_opt = iHQP_.solve();
