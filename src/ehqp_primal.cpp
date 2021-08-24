@@ -3,7 +3,7 @@
 #include <Eigen/QR>
 using namespace std;
 
-//#define DEBUG_QP
+#define DEBUG_QP
 namespace hcod{
     Ehqp_primal::Ehqp_primal(const std::vector<h_structure> &h, const Eigen::MatrixXd & Y)
     : h_(h), Y_(Y){
@@ -16,7 +16,7 @@ namespace hcod{
 
     void Ehqp_primal::compute(){
         if (!_isweighted){
-            y_.resize(h_[p_-1].ra);
+            y_.conservativeResize(h_[p_-1].ra);
             int y_idx = 0;
             for (int i=0; i<p_; i++){
                 h_structure hk = h_[i];
@@ -42,14 +42,14 @@ namespace hcod{
             }
             x_ = Y_.leftCols(h_[p_-1].ra) * y_.head(y_idx);
         }
-                else{
+        else{
             for (int i=0; i<p_; i++){
 
                 h_structure hk = h_[i], hj;
                 if (i>0)
                     hj = h_[i-1];
                 if (hk.r > 0){
-                    y_.resize(hk.ra-hk.rp);
+                    y_.conservativeResize(hk.ra);
 
                     Eigen::VectorXi im1_idx = hk.im(Eigen::VectorXi::LinSpaced(hk.m-hk.n, hk.n, hk.m-1));
                     L_ = hk.H(im1_idx, Eigen::VectorXi::LinSpaced(hk.ra-hk.rp, hk.rp, hk.ra-1));
@@ -76,25 +76,30 @@ namespace hcod{
                     else{
                         e_ = W1_.transpose() * b_;
                     }
-                    y_ = L_.completeOrthogonalDecomposition().pseudoInverse() * e_;
+                    y_.segment(hk.rp, hk.ra-hk.rp) = L_.completeOrthogonalDecomposition().pseudoInverse() * e_;
                     // cout << "L" << L_ << endl;
                     // cout << "y" << y_.transpose() << endl; 
 #ifdef DEBUG_QP
 cout << "im1_idx " << im1_idx.transpose() << "   " << hk.im.transpose() << endl;
 cout << "y_ " << y_.transpose() << endl;
 cout << "x_e" << e_.transpose() << endl;
-cout << "L" << L_ << endl;
+cout << "L " << L_ << endl;
 cout << "hk.rp \t" << hk.rp << endl;
 cout << "hk.ra-hk.rp \t" << hk.ra-hk.rp << endl;
+
+
 #endif DEBUG_QP
             
 
-                if (i == 0)
-                    hk.sol = hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_;
-                else
-                    hk.sol = hj.sol + hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_;
-                // cout << "sol" << hk.sol.transpose() << endl;
-                // getchar();
+                    if (i == 0)
+                        hk.sol = hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
+                    else{
+                        cout << "hk.r " << hk.r << endl;
+                        cout << "hj.sol " << hj.sol.transpose() << endl;
+                        getchar();
+                        hk.sol = hj.sol + hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
+                    
+                    }
                 }
                 h_[i] = hk;
             }
