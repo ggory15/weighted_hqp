@@ -79,7 +79,10 @@ int main(int argc, char **argv){
     // W.push_back(W2);
 
     A.push_back(Eigen::MatrixXd::Identity(7, 7));
-    A.push_back(Eigen::MatrixXd::Identity(7, 7));
+
+    // Eigen::MatrixXd A_tmp (6,7);
+    // A_tmp.setIdentity(6, 7);
+    A.push_back(Eigen::MatrixXd::Identity(6, 7));
     A.push_back(Eigen::MatrixXd::Identity(7, 7));
     Eigen::MatrixXd b_tmp(7, 2);
     b_tmp.col(0).setOnes();
@@ -87,29 +90,34 @@ int main(int argc, char **argv){
     b_tmp.col(1).setOnes();
     b_tmp.col(1) = b_tmp.col(1) * 0.1;
     b.push_back(b_tmp);
+    b_tmp.resize(6,2);
     b_tmp.col(0).setOnes();
     b_tmp.col(1).setOnes();
-    b_tmp.col(0) = b_tmp.col(0) * 1.49972;
-    b_tmp.col(1) = b_tmp.col(1) * 1.49972;
+    b_tmp.col(0) = b_tmp.col(0) * 0;
+    b_tmp.col(1) = b_tmp.col(1) * 0;
     b.push_back(b_tmp);
+    b_tmp.resize(7,2);
     b_tmp.col(0).setOnes();
     b_tmp.col(1).setOnes();
-    b_tmp.col(0) = b_tmp.col(0) * 0.49972;
-    b_tmp.col(1) = b_tmp.col(1) * 0.49972;
+    b_tmp.col(0) = b_tmp.col(0) * 1;
+    b_tmp.col(1) = b_tmp.col(1) * 1;
     b.push_back(b_tmp);
     
     Eigen::VectorXi type_tmp(7);
     type_tmp<< 2, 2, 2, 2, 2, 2, 2;
     btype.push_back(type_tmp);
-    type_tmp << 1, 1, 1, 1, 1, 1, 1;
+    type_tmp.resize(6);
+    type_tmp << 1, 1, 1, 1, 1, 1;
     btype.push_back(type_tmp);
+    type_tmp.resize(7);
+    type_tmp << 1, 1, 1, 1, 1, 1, 1;
     btype.push_back(type_tmp);
     MatrixXd W1(7, 7), W2(7, 7);
     W1.setIdentity();
     W2.setIdentity();
     W.push_back(W1);
     W.push_back(W2);
-    W.push_back(W2);
+    W.push_back(W1);
 
     Initset Init_active(btype); 
     iHQP_solver iHQP_(A, b, btype,  Init_active.getactiveset(), Init_active.getbounds());

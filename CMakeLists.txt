@@ -34,12 +34,12 @@ include_directories(${GTEST_INCLUDE_DIRS})
 # PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
 # SET(ADD_CXX_PATCH TRUE)
 ADD_DEFINITIONS("-fpermissive")
-# SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_BUILD_TYPE "Debug")
 
 #ADD_PROJECT_DEPENDENCY(Eigen3 REQUIRED PKG_CONFIG_REQUIRES "eigen3 >= 3.2.0")
 find_package(kimm_qpoases REQUIRED)
 include_directories(${kimm_qpoases_INCLUDE_DIRS})
-ADD_DEFINITIONS(-DEIGEN_RUNTIME_NO_MALLOC)
+#ADD_DEFINITIONS(-DEIGEN_RUNTIME_NO_MALLOC)
 find_package(Boost REQUIRED COMPONENTS system unit_test_framework)
 
 

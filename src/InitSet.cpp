@@ -8,6 +8,8 @@ namespace hcod{
     : btype_(btype)
     {
         size_ = btype.size();
+        aset_init_.clear();
+        bounds_.clear();
         for (long unsigned int i = 0; i< size_; i++){
             aset_init_.push_back(Eigen::VectorXi(0));
             aset_bound_.push_back(Eigen::VectorXi(0));

@@ -17,8 +17,7 @@ namespace hcod{
     class Initset{
         public:
             Initset(){
-                aset_.clear();
-                bounds_.clear();
+               
             };
             Initset(const std::vector<Eigen::VectorXi> & btype);
             Initset(const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound);
@@ -42,8 +41,11 @@ namespace hcod{
             };
 
             void set_btype(const std::vector<Eigen::VectorXi> & btype){     
-                btype_=btype;
+                btype_= btype;
                 size_ = btype.size();
+                aset_init_.clear();
+                aset_bound_.clear();
+                
                 for (long unsigned int i = 0; i< size_; i++){
                     aset_init_.push_back(Eigen::VectorXi(0));
                     aset_bound_.push_back(Eigen::VectorXi(0));
@@ -51,6 +53,8 @@ namespace hcod{
                 aset_.clear();
                 bounds_.clear();
                 this -> calc_bounds();
+
+                
             }
 
         private:

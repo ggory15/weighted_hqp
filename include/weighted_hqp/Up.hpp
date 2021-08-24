@@ -19,12 +19,12 @@ namespace hcod{
             
         public:
             bool compute(const int kup, const int cup, const int bound, const std::vector<h_structure> & h, const Eigen::MatrixXd & Y, const bool & isweighted = true);
-            std::vector<h_structure> & geth(){
+            std::vector<h_structure> geth(){
                 return h_;
             };
-            const std::vector<h_structure> & geth() const{
-                return h_;
-            };
+            // const std::vector<h_structure> & geth() const{
+            //     return h_;
+            // };
             Eigen::MatrixXd & getY(){
                 return Y_;
             };

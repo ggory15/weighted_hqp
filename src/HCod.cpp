@@ -39,6 +39,7 @@ namespace hcod{
     }
             
     void HCod::set_h_structure(const unsigned int & index){
+        
         H_structure hk;
         
         hk.A = A_[index];
@@ -96,9 +97,11 @@ namespace hcod{
 
     void HCod::compute_hcod(){
         
-        this->clear_submatrix();
+        if (_isweighted)
+            this->clear_submatrix();
+        
         H_structure hk = h_[0];
-
+        
         if (hk.m > 0){
             if (!_isweighted){
                 cod_ = new Cod(hk.A_act, EPS);
@@ -126,31 +129,30 @@ namespace hcod{
             else
                 hk.Y.setIdentity(nh_, nh_);
         }
-
         h_[0] = hk;
         if (!_isweighted){
             for (int i=1; i<p_; i++){
-                H_structure hk = h_[i];
+                H_structure hi = h_[i];
                 hk.rp = h_[i-1].ra;
                 
                 if (hk.m>0){
                     
-                    cod_ = new Cod(hk.A_act * Y_.rightCols(nh_-hk.rp) , EPS); // check 
+                    cod_ = new Cod(hk.A_act * Y_.rightCols(nh_-hi.rp) , EPS); // check 
                     
-                    hk.W(hk.iw, hk.im) = cod_->getW();
-                    hk.H(hk.im, Eigen::VectorXi::LinSpaced(hk.H.cols()- hk.rp ,hk.rp, hk.H.cols())) = cod_->getL();
+                    hi.W(hk.iw, hk.im) = cod_->getW();
+                    hi.H(hk.im, Eigen::VectorXi::LinSpaced(hi.H.cols()- hi.rp ,hi.rp, hi.H.cols())) = cod_->getL();
                     
-                    hk.r = cod_->getRank();
-                    hk.ra = hk.rp + hk.r;
-                    hk.n = hk.m-hk.r;
+                    hi.r = cod_->getRank();
+                    hi.ra = hi.rp + hi.r;
+                    hi.n = hi.m-hi.r;
 
-                    hk.H(hk.im, Eigen::VectorXi::LinSpaced(hk.rp ,0, hk.rp- 1)) = cod_->getW().transpose() * hk.A_act * Y_.leftCols(hk.rp);
-                    Y_.rightCols(nh_-hk.rp) = Y_.rightCols(nh_-hk.rp) * cod_->getQ();
+                    hi.H(hi.im, Eigen::VectorXi::LinSpaced(hi.rp ,0, hi.rp- 1)) = cod_->getW().transpose() * hi.A_act * Y_.leftCols(hi.rp);
+                    Y_.rightCols(nh_-hi.rp) = Y_.rightCols(nh_-hi.rp) * cod_->getQ();
                 }
                 else{
-                    hk.ra =hk.rp;
+                    hi.ra =hi.rp;
                 }
-                h_[i] = hk;
+                h_[i] = hi;
             }
         }
         else{

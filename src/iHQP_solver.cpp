@@ -32,8 +32,10 @@ namespace hcod{
 
         if (!_isweighted){
             hcod_ = new HCod(A_, b_, btype_, aset_init_, aset_bound_);
+    
             Y_ = hcod_->getY();
             h_ = hcod_->geth();
+
             nh_ =Y_.rows();
 
             x0_.setZero(nh_);

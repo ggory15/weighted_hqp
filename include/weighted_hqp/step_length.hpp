@@ -37,13 +37,13 @@ namespace hcod{
             bool & isviolation(){
                 return viol_;
             }
-            const Eigen::Vector3i & getcst() const{
+            const Eigen::Vector3i & getcst() const {
                 return cst_;
             }
-            const double & gettau() const{
+            const double & gettau() const {
                 return tau_;
             }
-            const bool & isviolation() const{
+            const bool & isviolation() const {
                 return viol_;
             }
            
