@@ -278,7 +278,7 @@ cout << "H_  " << h_[k].H  << endl;
                     else{
                         int rdef = h_[k].rupj -  h_[k].rpj[j];
                         for (int i = rdef; i>=2; i--){
-                            given_->compute_rotation(h_[j].Hj[j].col(h_[k].rpj[j] + i)(h_[k].imj[j]), h_[k].nj[j] + i, h_[k].nj[j] + rdef); //check
+                            given_->compute_rotation(h_[j].Hj[j].col(h_[k].rpj[j] + i-1)(h_[k].imj[j]), h_[k].nj[j] + i-1, h_[k].nj[j] + rdef-1); //check
                             Wi_ = given_->getR().transpose();
                             idx_H_col_vec = Eigen::VectorXi::LinSpaced(h_[j].Hj[j].cols() ,0, h_[j].Hj[j].cols()-1);
                             Eigen::MatrixXd H_prev = h_[j].Hj[j](h_[k].imj[j], idx_H_col_vec);       

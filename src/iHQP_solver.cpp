@@ -12,10 +12,6 @@ namespace hcod{
     {
         _isweighted = false;        
         this->set_problem();
-
-hcod_->print_h_structure(0);
-hcod_->print_h_structure(1);
-hcod_->print_h_structure(2);
     }
     iHQP_solver::iHQP_solver(const std::vector<Eigen::MatrixXd> &A, const std::vector<Eigen::MatrixXd> &b, const std::vector<Eigen::VectorXi> &btype, const std::vector<Eigen::VectorXi> &aset_init, const std::vector<Eigen::VectorXi> &aset_bound, const std::vector<Eigen::MatrixXd> &W)
     : A_(A), b_(b), btype_(btype), aset_init_(aset_init), aset_bound_(aset_bound), W_(W)
