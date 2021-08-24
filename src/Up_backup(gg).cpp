@@ -93,11 +93,12 @@ cout << "Hj " << h_[kup+1].Hj[kup] <<endl;
 cout << "dd" <<std::distance(csum.begin(), std::find_if(csum.begin(), csum.end(), [](const auto& x) { return x != 0; })) << endl;
 cout << "rup " <<  rup << "  " <<csum.transpose() << endl;
 cout << "h_[kup].ra " << h_[kup].ra << endl;
+cout << "p_ " << p_ <<endl;
 #endif
         if (rup <= h_[kup].ra){
             if (rup > h_[kup].rp){
-                for (int i= rup - h_[kup].rp; i>0; i--){         
-                    given_->compute_rotation(h_[kup].H.col(h_[kup].rp + i-1)(h_[kup].im), h_[kup].n + i-1, h_[kup].m-1);
+                for (int i= rup - h_[kup].rp; i>=0; i--){         
+                    given_->compute_rotation(h_[kup].H.col(h_[kup].rp + i)(h_[kup].im), h_[kup].n + i, h_[kup].m);
                     Wi_ = given_->getR().transpose();
 #ifdef DEBUG
 cout << "Wi_ " <<  Wi_ << endl;
@@ -199,7 +200,6 @@ cout << "Yup_ " <<Yup_ << endl;
         h_[kup].ra += 1;
 #ifdef DEBUG
 cout << "Yi_ " << Yi_ << endl;
-cout << "Yup_ " <<  Yup_ << endl;
 if (_isweighted){
     cout <<"h_[j].Yupj "<<  h_[kup+1].Yupj << endl;
 }
@@ -224,6 +224,7 @@ cout << "h_[1].H(  " << h_[1].H  << endl;
                     h_[k].ra += 1;
                 }
                 else{
+                    
                     int rdef = rup -  h_[k].rp;
                     for (int i = rdef; i>=2; i--){
                         given_->compute_rotation(h_[k].H.col(h_[k].rp + i - 1)(h_[k].im), h_[k].n + i -1, h_[k].n + rdef -1);
@@ -263,15 +264,13 @@ cout << "H_  " << h_[k].H  << endl;
             Y_ = Y_ * Yup_;
         }
         else
-        {   
-
-            for (int k=kup +1; k<p_; k++){                
-                // cout << "k \t" << k << endl;
-                // cout << "h_[k].rupj" << h_[k].rupj << endl;
-                // cout << "h_[k].rp \t " << h_[k].rp << endl;
-                // cout << "h_[k].ra \t " << h_[k].ra << endl;
-
+        {
+             
+            for (int k=kup +1; k<p_; k++){   
+                      
                 for (int j=kup+1; j < k-1; j++){
+                    cout << "h_[k].rupj" << h_[k].rupj <<  h_[k].rpj[j] << endl;
+                    getchar();
                     Eigen::VectorXi idx_H_col_vec = Eigen::VectorXi::LinSpaced(h_[j].Hj[j].cols() ,0, h_[j].Hj[j].cols()-1);       
                     Eigen::MatrixXd H_prev = h_[j].Hj[j](h_[j].imj[j], idx_H_col_vec);       
                     h_[j].Hj[j](h_[j].imj[j], idx_H_col_vec) = H_prev  * h_[k].Yupj;
@@ -282,6 +281,7 @@ cout << "H_  " << h_[k].H  << endl;
 
                     }
                     else{
+                       
                         int rdef = h_[k].rupj -  h_[k].rpj[j];
                         for (int i = rdef; i>=2; i--){
                             given_->compute_rotation(h_[j].Hj[j].col(h_[k].rpj[j] + i-1)(h_[k].imj[j]), h_[k].nj[j] + i-1, h_[k].nj[j] + rdef-1); //check
@@ -307,21 +307,28 @@ cout << "h_[k].H  " << h_[k].H  << endl;
                 if (h_[k].rupj < h_[k].rp + 1){
 
                 }
-                else if (h_[k].rupj> h_[k].ra) {
-                    h_[k].rp += 1;
-                    h_[k].ra += 1;
+                else if (h_[k].rupj > h_[k].ra) {
+
+#ifdef DEBUG
+cout <<" case 2" << endl;
+#endif             
+                    int rp = h_[k].rp;
+                    int ra = h_[k].ra;
+                    h_[k].rp = rp + 1;
+                    h_[k].ra = ra + 1;
 
                     for (int i=k+1; i<p_; i++){
-                        h_[i].rpj[k] = h_[k].rp;
-                        h_[i].raj[k] = h_[k].ra;
+                        h_[i].rpj[k] = rp + 1;
+                        h_[i].raj[k] = ra + 1;
                     }
                 }
-                else
-                {
+                else{
 
+       
+                
                     int rdef = h_[k].rupj -  h_[k].rp;
                     for (int i = rdef; i>=2; i--){
-                        given_->compute_rotation(h_[k].H.col(h_[k].rp + i-1)(h_[k].im), h_[k].n + i-1, h_[k].n + rdef-1);
+                        given_->compute_rotation(h_[k].H.col(h_[k].rp + i)(h_[k].im), h_[k].n + i, h_[k].n + rdef);
                         Wi_ = given_->getR().transpose();
                         Eigen::VectorXi idx_H_col_vec = Eigen::VectorXi::LinSpaced(h_[k].H.cols() ,0, h_[k].H.cols()-1);
                         Eigen::MatrixXd H_prev = h_[k].H(h_[k].im, idx_H_col_vec);       
@@ -330,12 +337,14 @@ cout << "h_[k].H  " << h_[k].H  << endl;
                         h_[k].H(h_[k].im, idx_H_col_vec) = Wi_ * H_prev;
                         h_[k].W(h_[k].iw, h_[k].im) = W_prev * Wi_.transpose();
                     }
-                    // cout << "h_[k].rp \t" << h_[k].rp << endl;
-                    // cout << "h_[k].r \t" << h_[k].r << endl;
 
-                    h_[k].rp += 1;
-                    h_[k].r -= 1;
+                    int rp_tmp = h_[k].rp;
+                    int r_tmp = h_[k].r;
+
+                    h_[k].rp = rp_tmp +1;
+                    h_[k].r = r_tmp - 1;
                     
+
                     
                     h_[k].im.resize(h_[k].m);
     
@@ -350,9 +359,9 @@ cout << "h_[k].H  " << h_[k].H  << endl;
                     }
 
                     for (int i=k+1; i<p_; i++){
-                        h_[i].rpj[k] = h_[k].rp;
-                        h_[i].rj[k] = h_[k].r;
-                        h_[i].nj[k] = h_[k].n;
+                        h_[i].rpj[k] = rp_tmp + 1;
+                        h_[i].rj[k] = r_tmp + 1;
+                        h_[i].nj[k] = h_[k].n +1;
                     }   
                     // cout << "h_[k].n  " << h_[k].n  << endl;
                     // cout << "hk im" << h_[k].im.transpose() << endl;
@@ -363,7 +372,10 @@ cout << "h_[k].H  " << h_[k].H  << endl;
                 Eigen::MatrixXd Y_prev = h_[k].Y;
                 h_[k].Y = Y_prev* h_[k].Yupj;
 
-                
+#ifdef DEBUG
+cout <<" case 3" << endl;
+cout <<" h_[k].Y" << h_[k].Y << endl;
+#endif      
             }
             
 #ifdef DEBUG
@@ -375,6 +387,7 @@ cout << "  " << endl;
 cout << "  " << endl;
 cout << "  " << endl;
 cout << "  " << endl;
+getchar();
 
 #endif                
         }

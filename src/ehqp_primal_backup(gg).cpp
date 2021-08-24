@@ -48,8 +48,7 @@ namespace hcod{
                 h_structure hk = h_[i], hj;
                 if (i>0)
                     hj = h_[i-1];
-                if (hk.r > 0)
-                {
+                if (hk.r > 0){
                     y_.conservativeResize(hk.ra);
 
                     Eigen::VectorXi im1_idx = hk.im(Eigen::VectorXi::LinSpaced(hk.m-hk.n, hk.n, hk.m-1));
@@ -88,22 +87,16 @@ cout << "L " << L_ << endl;
 cout << "hk.rp \t" << hk.rp << endl;
 cout << "hk.ra-hk.rp \t" << hk.ra-hk.rp << endl;
 
-
 #endif DEBUG_QP
             
 
                     if (i == 0)
                         hk.sol = hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
                     else{
-                        hk.sol = hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
+                        hk.sol = hj.sol + hk.Wk * hk.Y.block(0, hk.rp, hk.Y.rows(), hk.ra-hk.rp) * y_.segment(hk.rp, hk.ra-hk.rp);
                     }
+                     cout << hk.sol.transpose() << endl;
                 }
-                if (i==0)
-                   hk.sol = hk.sol;
-                else 
-                   hk.sol = hj.sol + hk.sol;
-
-
                 h_[i] = hk;
             }
             x_ = h_[p_-1].sol;
