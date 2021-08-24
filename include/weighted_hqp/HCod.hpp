@@ -76,10 +76,16 @@ namespace hcod{
 
         public:
             void print_h_structure(const unsigned int & index);
-            std::vector<H_structure> geth(){
+            std::vector<H_structure> & geth(){
                 return h_;
             }
-            Eigen::MatrixXd getY(){
+            Eigen::MatrixXd & getY(){
+                return Y_;
+            };
+            const std::vector<H_structure> & geth() const{
+                return h_;
+            }
+            const Eigen::MatrixXd & getY() const{
                 return Y_;
             };
             

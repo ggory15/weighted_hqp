@@ -34,7 +34,7 @@ namespace hcod{
     }
 
 
-    Eigen::VectorXd eHQP_solver::solve(){
+    Eigen::VectorXd & eHQP_solver::solve(){
         if (!_isweighted){
             ehpq_primal_->setProblem(hcod_->geth(), hcod_->getY());
             ehpq_primal_->compute();

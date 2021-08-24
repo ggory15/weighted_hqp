@@ -42,8 +42,11 @@ namespace hcod{
             }
            
            
-            Eigen::VectorXd solve();
-            std::vector<H_structure> geth(){
+            Eigen::VectorXd & solve();
+            std::vector<H_structure> & geth(){
+                return h_;
+            }
+            const std::vector<H_structure> & geth() const{
                 return h_;
             }
                         

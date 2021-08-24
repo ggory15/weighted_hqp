@@ -18,7 +18,7 @@ namespace hcod{
             void set_problem();
 
         public:
-            Eigen::VectorXd solve();
+            Eigen::VectorXd & solve();
                         
         private:
             std::vector<Eigen::MatrixXd> A_;

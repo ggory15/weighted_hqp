@@ -53,7 +53,7 @@ namespace hcod{
     }
 
 
-    Eigen::VectorXd iHQP_solver::solve(){
+    Eigen::VectorXd & iHQP_solver::solve(){
         iter_ = 0;
         kcheck_ = 0;
         

@@ -5,7 +5,7 @@
 #include "weighted_hqp/iHQP_solver.hpp"
 #include "weighted_hqp/InitSet.hpp"
 
-#include <gtest/gtest.h>
+// #include <gtest/gtest.h>
 #include <chrono>
 
 
@@ -49,11 +49,9 @@ bool evaluation(vector<MatrixXd> A, vector<MatrixXd> b, vector<VectorXi> btype, 
     }
     return true;
 }
-
-
-TEST(TestSuite, testCase1){
-   
-    vector<MatrixXd> A;
+	
+int main(int argc, char **argv){
+	vector<MatrixXd> A;
     vector<MatrixXd> b;
     vector<VectorXi> btype;   
     vector<MatrixXd> W;
@@ -63,7 +61,7 @@ TEST(TestSuite, testCase1){
     A.push_back(Eigen::MatrixXd::Identity(3, 6));
     A.push_back(Eigen::MatrixXd::Identity(3, 6));
     Eigen::MatrixXd b_tmp(3, 2);
-    b_tmp.col(0) << -2, -4, -1;
+    b_tmp.col(0) << -1, -1, -1;
     b_tmp.col(1) << 1, 1, 1;
     b.push_back(b_tmp);
     b_tmp.col(0) << -3, -3, -3;
@@ -93,11 +91,6 @@ TEST(TestSuite, testCase1){
     cout << " " << endl;
 
     cout << "HCOD Solution: " << x_opt.transpose() << endl;
-  
-}
 
-	
-int main(int argc, char **argv){
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
+    return 0;
 }

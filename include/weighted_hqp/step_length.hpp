@@ -28,13 +28,22 @@ namespace hcod{
                 p_ = h.size();
             }
             void compute();
-            Eigen::VectorXi getcst(){
+            Eigen::Vector3i & getcst(){
                 return cst_;
             }
-            double gettau(){
+            double & gettau(){
                 return tau_;
             }
-            bool isviolation(){
+            bool & isviolation(){
+                return viol_;
+            }
+            const Eigen::Vector3i & getcst() const{
+                return cst_;
+            }
+            const double & gettau() const{
+                return tau_;
+            }
+            const bool & isviolation() const{
                 return viol_;
             }
            

@@ -30,10 +30,16 @@ namespace hcod{
                 y_.setZero(num);
             }
             void compute();
-            Eigen::VectorXd getx(){
+            Eigen::VectorXd & getx(){
                 return x_;
             }
-            Eigen::VectorXd gety(){
+            Eigen::VectorXd & gety(){
+                return y_;
+            }
+            const Eigen::VectorXd & getx() const{
+                return x_;
+            }
+            const Eigen::VectorXd & gety() const{
                 return y_;
             }
             void setWProblem(const std::vector<h_structure> &h){

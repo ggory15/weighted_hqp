@@ -17,19 +17,34 @@ namespace hcod{
             void computation();
 
         public:
-            Eigen::MatrixXd getW(){
+            Eigen::MatrixXd & getW(){
                 return W_permute_;
             }
-            Eigen::MatrixXd getL(){
+            Eigen::MatrixXd & getL(){
                 return L_permute_;
             }
-            Eigen::MatrixXd getQ(){
+            Eigen::MatrixXd & getQ(){
                 return Q_;
             }
-            Eigen::MatrixXd getE(){
+            Eigen::MatrixXd & getE(){
                 return E_;
             }
-            int getRank(){
+            int & getRank(){
+                return rankA_;
+            }
+            const Eigen::MatrixXd & getW() const {
+                return W_permute_;
+            }
+            const Eigen::MatrixXd & getL() const{
+                return L_permute_;
+            }
+            const Eigen::MatrixXd & getQ() const{
+                return Q_;
+            }
+            const Eigen::MatrixXd & getE() const{
+                return E_;
+            }
+            const int & getRank() const{
                 return rankA_;
             }
 

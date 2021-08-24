@@ -16,7 +16,10 @@ namespace hcod{
               
 
         public:
-           Eigen::MatrixXd getR(){
+           Eigen::MatrixXd & getR(){
+               return R_;
+           }
+           const Eigen::MatrixXd & getR() const{
                return R_;
            }
             

@@ -28,12 +28,19 @@ namespace hcod{
             void calc_bounds();
 
         public:
-            std::vector<Eigen::VectorXi> getactiveset(){
+            std::vector<Eigen::VectorXi> & getactiveset(){
                 return aset_;
             };
-            std::vector<Eigen::VectorXi> getbounds(){
+            std::vector<Eigen::VectorXi> & getbounds(){
                 return bounds_;
             };
+            const std::vector<Eigen::VectorXi> & getactiveset() const {
+                return aset_;
+            };
+            const std::vector<Eigen::VectorXi> & getbounds() const {
+                return bounds_;
+            };
+
             void set_btype(const std::vector<Eigen::VectorXi> & btype){     
                 btype_=btype;
                 size_ = btype.size();
